@@ -60,10 +60,42 @@ td,th{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line)}
 .end h2{font-size:1.2rem}
 button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:8px 12px;font:inherit;cursor:pointer}
 @media (prefers-reduced-motion:reduce){.fill{transition:none}}
+
+.nav-bar{display:flex;gap:8px;padding:20px 0 8px}
+.nav-item{display:inline-flex;align-items:center;gap:7px;padding:7px 15px;border-radius:99px;font-size:.9rem;font-weight:600;text-decoration:none;color:var(--muted);background:var(--surface);border:1px solid var(--line);transition:all .2s ease}
+.nav-item:hover{color:var(--ink);border-color:var(--muted)}
+.nav-item.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.nav-badge{background:var(--p2);color:#fff;font-size:.68rem;padding:2px 7px;border-radius:99px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.notes-banner{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--p2);border-left:5px solid var(--p2);border-radius:12px;padding:14px 16px;margin:12px 0 6px;text-decoration:none;color:inherit;transition:transform .18s,box-shadow .18s}
+.notes-banner:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(79,70,200,.14)}
+.nb-icon{font-size:1.9rem;line-height:1}
+.nb-body{flex:1;min-width:0}
+.nb-title{font-family:"Bricolage Grotesque",Figtree,sans-serif;font-weight:800;font-size:1.02rem;color:var(--p2);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nb-tag{font-size:.68rem;background:var(--tint);color:var(--p2);padding:2px 7px;border-radius:99px;font-weight:700;text-transform:uppercase}
+.nb-desc{font-size:.88rem;color:var(--muted);margin-top:2px;line-height:1.4}
+.nb-arrow{font-family:"Bricolage Grotesque",Figtree,sans-serif;font-weight:800;font-size:.88rem;color:var(--p2);white-space:nowrap;padding:6px 14px;border-radius:8px;background:var(--tint);transition:all .2s}
+.notes-banner:hover .nb-arrow{background:var(--p2);color:#fff}
+.res-card{background:var(--tint);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-top:12px}
+.res-card-tag{font-family:"Bricolage Grotesque",Figtree,sans-serif;font-weight:800;font-size:.78rem;color:var(--p2);text-transform:uppercase;letter-spacing:.6px}
+.res-card-text{font-size:.9rem;color:var(--ink);margin:4px 0 9px}
+.res-card-link{display:inline-flex;align-items:center;gap:6px;font-size:.86rem;font-weight:700;text-decoration:none;color:#fff;background:var(--p2);padding:6px 14px;border-radius:8px;transition:opacity .18s}
+.res-card-link:hover{opacity:.9}
+@media(max-width:540px){.notes-banner{flex-wrap:wrap}.nb-arrow{width:100%;text-align:center}}
 </style>
 </head>
 <body>
 <div class="wrap">
+<nav class="nav-bar">
+  <a href="index.html" class="nav-item active">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg>
+    <span>Roadmap</span>
+  </a>
+  <a href="notes.html" class="nav-item">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+    <span>Python Notes</span>
+    <span class="nav-badge">New</span>
+  </a>
+</nav>
 <header>
   <h1>AI Learning Route</h1>
   <p>Senior ka roadmap, 10 stations mein. Station kholo, padho, phir uska gola tick karo.</p>
@@ -77,6 +109,15 @@ button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:
   <div class="tip"><b>Practice kaise karein</b>OpenAI ya Gemini ki API keys use karo. Student ID card se free mil jati hain.</div>
   <div class="tip"><b>Atak gaye to?</b>Pehle khud search karo. Jab saare raste band lage, tab senior ko batao.</div>
 </div>
+
+<a href="notes.html" class="notes-banner">
+  <div class="nb-icon">🐍</div>
+  <div class="nb-body">
+    <div class="nb-title">Python Complete Notes Handbook <span class="nb-tag">New Page</span></div>
+    <div class="nb-desc">Basics se lekar OOPs, Exception &amp; File Handling tak — 28 chapters interactive code examples ke saath.</div>
+  </div>
+  <span class="nb-arrow">Open Notes &rarr;</span>
+</a>
 
 <ol id="route">
   <li class="phase" style="--c:var(--p1)">Phase 1: AI ki basics<small>Yahan sabse zyada time do</small></li>
@@ -128,6 +169,11 @@ button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:
     <div class="body">
       <p><span class="k">Padho:</span> variables, if/else, loops, functions, list aur dictionary, file padhna.</p>
       <p><span class="k">Python hi kyun?</span> AI aur data ki libraries Python mein sabse achhi hain. Example: ek PDF ke data mein duplicate records hatane hain. Python (Pandas) mein ye kuch lines ka kaam hai, JS web pages ke liye zyada hota hai.</p>
+      <div class="res-card">
+        <div class="res-card-tag">Dedicated Handbook</div>
+        <div class="res-card-text">Python ke syntax, detailed notes aur examples ke liye Sheryians handbook page dekhein:</div>
+        <a href="notes.html" class="res-card-link">📖 Open Python Notes Handbook &rarr;</a>
+      </div>
       <div class="chk"><b>Khud check karo:</b> Ek list se duplicate values hata sako?</div>
     </div></details></li>
 
