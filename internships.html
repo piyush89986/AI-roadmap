@@ -1,0 +1,2560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tech &amp; AI Internships 2026–2027 | AI Learning Route</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root {
+  --bg: #EEF3F8;
+  --surface: #FFFFFF;
+  --ink: #14213D;
+  --muted: #52627F;
+  --line: #C5D0E0;
+  --p1: #0B8F80;
+  --p2: #4F46C8;
+  --p3: #C77A0A;
+  --tint: #E3EBF5;
+  --card-bg: #FFFFFF;
+  --card-border: #D8E2EE;
+  --shadow-sm: 0 2px 8px rgba(20,33,61,0.04);
+  --shadow-md: 0 8px 24px rgba(20,33,61,0.08);
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1726;
+    --surface: #18233A;
+    --ink: #E8EEF8;
+    --muted: #9FB0CB;
+    --line: #33435F;
+    --p1: #3CCDB9;
+    --p2: #9A94FF;
+    --p3: #F2B04A;
+    --tint: #20304D;
+    --card-bg: #18233A;
+    --card-border: #2B3A54;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.25);
+    --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
+    color-scheme: dark;
+  }
+}
+
+*, *::before, *::after { box-sizing: inherit; margin: 0; padding: 0; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 15px/1.6 Figtree, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Bricolage Grotesque", Figtree, system-ui, sans-serif;
+  line-height: 1.2;
+}
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+/* ── NAV BAR ── */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0 16px;
+  flex-wrap: wrap;
+}
+.nav-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: 99px;
+  font-size: .9rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  transition: all .2s ease;
+}
+.nav-item:hover {
+  color: var(--ink);
+  border-color: var(--muted);
+  transform: translateY(-1px);
+}
+.nav-item.active {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+.nav-badge {
+  background: var(--p1);
+  color: #fff;
+  font-size: .68rem;
+  padding: 2px 7px;
+  border-radius: 99px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, var(--surface) 0%, var(--tint) 100%);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 32px 28px;
+  margin: 10px 0 24px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(11,143,128,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--p1);
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  margin-bottom: 12px;
+}
+.hero-tag-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 8px #10B981;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .4; transform: scale(.85); }
+}
+.hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.hero p {
+  color: var(--muted);
+  font-size: 1.02rem;
+  max-width: 680px;
+  line-height: 1.55;
+}
+
+/* ── METRICS GRID ── */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 24px;
+}
+.metric-box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-sm);
+}
+.metric-num {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1;
+}
+.metric-label {
+  font-size: .82rem;
+  color: var(--muted);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* ── CONTROLS TOOLBAR ── */
+.toolbar {
+  background: var(--surface);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 12px;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+}
+.search-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.search-box {
+  flex: 1;
+  position: relative;
+}
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+}
+.search-input {
+  width: 100%;
+  padding: 11px 16px 11px 42px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: .95rem;
+  outline: none;
+  transition: all .2s;
+}
+.search-input:focus {
+  border-color: var(--p1);
+  box-shadow: 0 0 0 3px rgba(11,143,128,0.15);
+}
+.filter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.filter-label {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-right: 4px;
+}
+.chip {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  padding: 5px 12px;
+  border-radius: 99px;
+  font-size: .83rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .18s ease;
+  user-select: none;
+}
+.chip:hover {
+  color: var(--ink);
+  border-color: var(--muted);
+}
+.chip.active {
+  background: var(--p1);
+  color: #fff;
+  border-color: var(--p1);
+}
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 0 4px;
+  font-size: .9rem;
+  color: var(--muted);
+}
+.status-bar b {
+  color: var(--ink);
+}
+.reset-btn {
+  background: none;
+  border: none;
+  color: var(--p1);
+  font-weight: 700;
+  font-size: .85rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+.reset-btn:hover {
+  background: var(--tint);
+  text-decoration: underline;
+}
+
+/* ── CARDS GRID ── */
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 18px;
+}
+.job-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  position: relative;
+}
+.job-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--p1);
+}
+.card-header {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+.company-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+.card-title-group {
+  flex: 1;
+  min-width: 0;
+}
+.company-name {
+  font-size: .88rem;
+  color: var(--muted);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.role-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 2px;
+  line-height: 1.3;
+}
+.badges-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0 14px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: .78rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.badge-remote {
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+.badge-onsite {
+  background: rgba(79, 70, 200, 0.12);
+  color: var(--p2);
+  border: 1px solid rgba(79, 70, 200, 0.25);
+}
+.badge-hybrid {
+  background: rgba(199, 122, 10, 0.12);
+  color: var(--p3);
+  border: 1px solid rgba(199, 122, 10, 0.25);
+}
+.badge-batch {
+  background: var(--tint);
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.card-details {
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  font-size: .83rem;
+  color: var(--muted);
+  display: grid;
+  gap: 6px;
+}
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.detail-icon {
+  flex-shrink: 0;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.detail-text b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+}
+.btn-apply {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: var(--p1);
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: .92rem;
+  transition: all .18s ease;
+  box-shadow: 0 2px 8px rgba(11,143,128,0.22);
+  border: none;
+  cursor: pointer;
+}
+.btn-apply:hover {
+  background: #097569;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(11,143,128,0.35);
+  color: #fff;
+}
+.btn-copy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all .18s;
+  font-size: .85rem;
+}
+.btn-copy:hover {
+  color: var(--ink);
+  border-color: var(--muted);
+  background: var(--tint);
+}
+
+/* ── EMPTY STATE ── */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-lg);
+  display: none;
+}
+.empty-state h3 {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+.empty-state p {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+/* ── TOAST ── */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  font-size: .9rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+  z-index: 1000;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all .25s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ── FOOTER ── */
+footer {
+  margin-top: 50px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--muted);
+  font-size: .88rem;
+}
+footer a {
+  color: var(--p1);
+  text-decoration: none;
+  font-weight: 600;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .wrap { padding: 0 14px 60px; }
+  .hero { padding: 22px 18px; }
+  .metrics { grid-template-columns: repeat(2, 1fr); }
+  .toolbar { position: static; padding: 14px; }
+  .filter-row { flex-direction: column; align-items: flex-start; }
+  .jobs-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<!-- ══ NAV BAR ══ -->
+<nav class="nav-bar">
+  <a href="index.html" class="nav-item">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg>
+    <span>Roadmap</span>
+  </a>
+  <a href="notes.html" class="nav-item">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+    <span>Python Notes</span>
+  </a>
+  <a href="internships.html" class="nav-item active">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+    <span>Internships</span>
+    <span class="nav-badge">100 Live</span>
+  </a>
+</nav>
+
+<!-- ══ HERO ══ -->
+<header class="hero">
+  <div class="hero-tag">
+    <span class="hero-tag-dot"></span>
+    <span>Live Hiring Board 2026–2027</span>
+  </div>
+  <h1>Tech &amp; AI Internships</h1>
+  <p>Curated 100+ active internship roles in Full Stack, AI/ML, Data Science, Backend &amp; Design. Verified direct application links ready for 2027 &amp; 2028 batch students.</p>
+
+  <div class="metrics">
+    <div class="metric-box">
+      <div class="metric-num">100</div>
+      <div class="metric-label">Total Listings</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-num" style="color:var(--p1)">52</div>
+      <div class="metric-label">Remote Roles</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-num" style="color:var(--p2)">100%</div>
+      <div class="metric-label">2027 Batch Fit</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-num" style="color:var(--p3)">84</div>
+      <div class="metric-label">2028 Batch Open</div>
+    </div>
+  </div>
+</header>
+
+<!-- ══ TOOLBAR ══ -->
+<section class="toolbar">
+  <div class="search-row">
+    <div class="search-box">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="text" id="searchInput" class="search-input" placeholder="Search by role, company name (e.g. Codeatrix, Ayrin), tech stack, or city..." autocomplete="off">
+    </div>
+  </div>
+
+  <div class="filter-row">
+    <div class="filter-group">
+      <span class="filter-label">Work Mode:</span>
+      <button class="chip active" data-filter="mode" data-val="all">All (100)</button>
+      <button class="chip" data-filter="mode" data-val="remote">🌐 Remote (52)</button>
+      <button class="chip" data-filter="mode" data-val="onsite">🏢 Onsite (48)</button>
+      <button class="chip" data-filter="mode" data-val="hybrid">🔀 Hybrid</button>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-label">Eligible Batch:</span>
+      <button class="chip active" data-filter="batch" data-val="all">All</button>
+      <button class="chip" data-filter="batch" data-val="2027">2027 Batch</button>
+      <button class="chip" data-filter="batch" data-val="2028">2028 Batch</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATUS BAR ══ -->
+<div class="status-bar">
+  <div>Showing <b id="matchCount">100</b> of 100 internships</div>
+  <button id="resetBtn" class="reset-btn" style="display:none;">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+    <span>Reset filters</span>
+  </button>
+</div>
+
+<!-- ══ JOBS CONTAINER ══ -->
+<main id="jobsGrid" class="jobs-grid">
+  <!-- JavaScript populates this -->
+</main>
+
+<!-- ══ EMPTY STATE ══ -->
+<div id="emptyState" class="empty-state">
+  <h3>No matching internships found</h3>
+  <p>Try clearing your search query or switching your filter criteria.</p>
+  <button class="chip active" onclick="resetAllFilters()">Reset All Filters</button>
+</div>
+
+<!-- ══ TOAST NOTIFICATION ══ -->
+<div id="toast" class="toast">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+  <span id="toastMsg">Application link copied to clipboard!</span>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div>
+    Made for students &bull; <a href="index.html">AI Learning Route</a> &bull; <a href="notes.html">Python Handbook</a>
+  </div>
+  <div>
+    Data source: <code>internship_data.json</code>
+  </div>
+</footer>
+
+</div>
+
+<!-- ══ EMBEDDED DATA & SCRIPT ══ -->
+<script>
+const INTERNSHIPS = [
+  {
+    "id": 1,
+    "role": "Full Stack Development",
+    "company": "Ayrin Digital",
+    "fullRole": "Full Stack Development — Ayrin Digital",
+    "batch": "2027 (explicit graduation-year requirement)",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-full-stack-development-internship-at-ayrin-digital1790681984",
+    "deadline": "29-10-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": false,
+    "monogram": "AD",
+    "hue": 169
+  },
+  {
+    "id": 2,
+    "role": "AI Product",
+    "company": "Flexiple Tech Private Limited",
+    "fullRole": "AI Product — Flexiple Tech Private Limited",
+    "batch": "2027 (explicit; final-year students accepted)",
+    "location": "Onsite — Bangalore",
+    "link": "https://internshala.com/internship/detail/ai-product-internship-in-bangalore-at-flexiple-tech-private-limited1791521733",
+    "deadline": "08-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": false,
+    "monogram": "FT",
+    "hue": 186
+  },
+  {
+    "id": 3,
+    "role": "Software Engineering Intern - Full Stack",
+    "company": "TheInterviews",
+    "fullRole": "Software Engineering Intern - Full Stack — TheInterviews",
+    "batch": "2027 / 2028 — students accepted; both years offered in application form",
+    "location": "Remote / hybrid / onsite (choice)",
+    "link": "https://www.theinterviews.ai/careers/software-engineering-intern-fullstack-india",
+    "deadline": "Not specified",
+    "modeType": "hybrid",
+    "modeBadge": "🔀 Hybrid / Flexible",
+    "modeClass": "badge-hybrid",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "T",
+    "hue": 323
+  },
+  {
+    "id": 4,
+    "role": "AI/ML",
+    "company": "Codeatrix",
+    "fullRole": "AI/ML — Codeatrix",
+    "batch": "2027 / 2028 — all college years accepted",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-ai-ml-internship-at-codeatrix1793284129",
+    "deadline": "28-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "C",
+    "hue": 327
+  },
+  {
+    "id": 5,
+    "role": "Data Science",
+    "company": "Codeatrix",
+    "fullRole": "Data Science — Codeatrix",
+    "batch": "2027 / 2028 — all college years accepted",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-data-science-internship-at-codeatrix1793282106",
+    "deadline": "28-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "C",
+    "hue": 327
+  },
+  {
+    "id": 6,
+    "role": "Front End Development",
+    "company": "Codeatrix",
+    "fullRole": "Front End Development — Codeatrix",
+    "batch": "2027 / 2028 — all college years accepted",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-front-end-development-internship-at-codeatrix1793282160",
+    "deadline": "28-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "C",
+    "hue": 327
+  },
+  {
+    "id": 7,
+    "role": "Full Stack Development",
+    "company": "Codeatrix",
+    "fullRole": "Full Stack Development — Codeatrix",
+    "batch": "2027 / 2028 — all college years accepted",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-full-stack-development-internship-at-codeatrix1793282312",
+    "deadline": "28-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "C",
+    "hue": 327
+  },
+  {
+    "id": 8,
+    "role": "UI/UX Design",
+    "company": "Codeatrix",
+    "fullRole": "UI/UX Design — Codeatrix",
+    "batch": "2027 / 2028 — all college years accepted",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-ui-ux-design-internship-at-codeatrix1793282364",
+    "deadline": "28-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "C",
+    "hue": 327
+  },
+  {
+    "id": 9,
+    "role": "Web Development",
+    "company": "Codeatrix",
+    "fullRole": "Web Development — Codeatrix",
+    "batch": "2027 / 2028 — all college years accepted",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-web-development-internship-at-codeatrix1793284078",
+    "deadline": "28-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "C",
+    "hue": 327
+  },
+  {
+    "id": 10,
+    "role": "AI/ML",
+    "company": "OpalCode",
+    "fullRole": "AI/ML — OpalCode",
+    "batch": "2027 / 2028 — all college years accepted",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-ai-ml-internship-at-opalcode1793075902",
+    "deadline": "26-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "O",
+    "hue": 55
+  },
+  {
+    "id": 11,
+    "role": "Backend Development",
+    "company": "OpalCode",
+    "fullRole": "Backend Development — OpalCode",
+    "batch": "2027 / 2028 — all college years accepted",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-backend-development-internship-at-opalcode1793075888",
+    "deadline": "26-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "O",
+    "hue": 55
+  },
+  {
+    "id": 12,
+    "role": "Data Analytics",
+    "company": "OpalCode",
+    "fullRole": "Data Analytics — OpalCode",
+    "batch": "2027 / 2028 — all college years accepted",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-data-analytics-internship-at-opalcode1793075857",
+    "deadline": "26-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "O",
+    "hue": 55
+  },
+  {
+    "id": 13,
+    "role": "Data Science",
+    "company": "OpalCode",
+    "fullRole": "Data Science — OpalCode",
+    "batch": "2027 / 2028 — all college years accepted",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-data-science-internship-at-opalcode1793075880",
+    "deadline": "26-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "O",
+    "hue": 55
+  },
+  {
+    "id": 14,
+    "role": "Front End Development",
+    "company": "OpalCode",
+    "fullRole": "Front End Development — OpalCode",
+    "batch": "2027 / 2028 — all college years accepted",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-front-end-development-internship-at-opalcode1793035091",
+    "deadline": "25-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "O",
+    "hue": 55
+  },
+  {
+    "id": 15,
+    "role": "Full Stack Development",
+    "company": "OpalCode",
+    "fullRole": "Full Stack Development — OpalCode",
+    "batch": "2027 / 2028 — all college years accepted",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-full-stack-development-internship-at-opalcode1793075893",
+    "deadline": "26-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "O",
+    "hue": 55
+  },
+  {
+    "id": 16,
+    "role": "Web Development",
+    "company": "OpalCode",
+    "fullRole": "Web Development — OpalCode",
+    "batch": "2027 / 2028 — all college years accepted",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-web-development-internship-at-opalcode1793035188",
+    "deadline": "25-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "O",
+    "hue": 55
+  },
+  {
+    "id": 17,
+    "role": "AI Engineering & Open-Source Development Internship",
+    "company": "Alphashots.ai (Alfamind AI Insights Pvt Ltd)",
+    "fullRole": "AI Engineering & Open-Source Development Internship — Alphashots.ai (Alfamind AI Insights Pvt Ltd)",
+    "batch": "2027 / 2028 — second year onward; calendar years not stated",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-part-time-ai-engineering-open-source-development-internship-internship-at-alphashotsai-alfamind-ai-insights-pvt-ltd1792999505",
+    "deadline": "25-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "AA",
+    "hue": 201
+  },
+  {
+    "id": 18,
+    "role": "Full Stack Development",
+    "company": "Mufaddal Dalal",
+    "fullRole": "Full Stack Development — Mufaddal Dalal",
+    "batch": "2027 / 2028 — pre-final/final-year students; calendar years not stated",
+    "location": "Onsite — Indore",
+    "link": "https://internshala.com/internship/detail/full-stack-development-internship-in-indore-at-mufaddal-dalal1791976541",
+    "deadline": "13-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "MD",
+    "hue": 192
+  },
+  {
+    "id": 19,
+    "role": "Data Analytics",
+    "company": "Nathaniel School Of Music",
+    "fullRole": "Data Analytics — Nathaniel School Of Music",
+    "batch": "2027 / 2028 — third year or above; calendar years not stated",
+    "location": "Onsite — Bangalore",
+    "link": "https://internshala.com/internship/detail/data-analytics-internship-in-bangalore-at-nathaniel-school-of-music1790657236",
+    "deadline": "29-10-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "NS",
+    "hue": 268
+  },
+  {
+    "id": 20,
+    "role": "Full Stack Development",
+    "company": "Nathaniel School Of Music",
+    "fullRole": "Full Stack Development — Nathaniel School Of Music",
+    "batch": "2027 / 2028 — third year or above; calendar years not stated",
+    "location": "Onsite — Bangalore",
+    "link": "https://internshala.com/internship/detail/full-stack-development-internship-in-bangalore-at-nathaniel-school-of-music1790657138",
+    "deadline": "29-10-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "NS",
+    "hue": 268
+  },
+  {
+    "id": 21,
+    "role": "Software Development",
+    "company": "Nnomm",
+    "fullRole": "Software Development — Nnomm",
+    "batch": "2027 / 2028 — pre-final/final-year students; calendar years not stated",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-software-development-internship-at-nnomm1791373812",
+    "deadline": "06-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "N",
+    "hue": 7
+  },
+  {
+    "id": 22,
+    "role": "QA Testing & Product Implementation",
+    "company": "Altx Convergence Private Limited",
+    "fullRole": "QA Testing & Product Implementation — Altx Convergence Private Limited",
+    "batch": "2027 track — final-year students; calendar year not stated",
+    "location": "Onsite — Bangalore",
+    "link": "https://internshala.com/internship/detail/qa-testing-product-implementation-internship-in-bangalore-at-altx-convergence-private-limited1791963083",
+    "deadline": "04-12-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": false,
+    "monogram": "AC",
+    "hue": 37
+  },
+  {
+    "id": 23,
+    "role": "Full Stack Development",
+    "company": "Axe Consultancy And Security Services LLC",
+    "fullRole": "Full Stack Development — Axe Consultancy And Security Services LLC",
+    "batch": "2027 track — final-year students; calendar year not stated",
+    "location": "Remote; optional onsite (Surat / Dehradun)",
+    "link": "https://internshala.com/internship/detail/work-from-home-full-stack-development-internship-at-axe-consultancy-and-security-services-llc1793283251",
+    "deadline": "28-11-2026",
+    "modeType": "hybrid",
+    "modeBadge": "🔀 Hybrid / Flexible",
+    "modeClass": "badge-hybrid",
+    "b2027": true,
+    "b2028": false,
+    "monogram": "AC",
+    "hue": 339
+  },
+  {
+    "id": 24,
+    "role": "Aeronautical Data Engineer",
+    "company": "IFOA",
+    "fullRole": "Aeronautical Data Engineer — IFOA",
+    "batch": "2027 track — final-year students; calendar year not stated",
+    "location": "Onsite — Delhi",
+    "link": "https://internshala.com/internship/detail/aeronautical-data-engineer-internship-in-delhi-at-ifoa1791877853",
+    "deadline": "12-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": false,
+    "monogram": "I",
+    "hue": 287
+  },
+  {
+    "id": 25,
+    "role": "Mobile App Development",
+    "company": "MCube AI Private Limited",
+    "fullRole": "Mobile App Development — MCube AI Private Limited",
+    "batch": "2027 track — final-semester students only; confirm semester timing",
+    "location": "Onsite — Faridabad, Delhi, Gurgaon, Noida",
+    "link": "https://internshala.com/internship/detail/mobile-app-development-internship-in-multiple-locations-at-mcube-ai-private-limited1793187288",
+    "deadline": "28-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": false,
+    "monogram": "MA",
+    "hue": 3
+  },
+  {
+    "id": 26,
+    "role": "Software Engineering Intern",
+    "company": "Moonfire",
+    "fullRole": "Software Engineering Intern — Moonfire",
+    "batch": "2027 track — final-year students; calendar year not stated",
+    "location": "Onsite — Pune",
+    "link": "https://ats.moonfiregroup.com/jobs/software-engineering-intern",
+    "deadline": "Not specified",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": false,
+    "monogram": "M",
+    "hue": 257
+  },
+  {
+    "id": 27,
+    "role": "Embedded Audio & AI (Raspberry Pi)",
+    "company": "Nathaniel School Of Music",
+    "fullRole": "Embedded Audio & AI (Raspberry Pi) — Nathaniel School Of Music",
+    "batch": "2027 track — final-year students; calendar year not stated",
+    "location": "Onsite — Bangalore",
+    "link": "https://internshala.com/internship/detail/embedded-audio-ai-raspberry-pi-internship-in-bangalore-at-nathaniel-school-of-music1790657059",
+    "deadline": "29-10-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": false,
+    "monogram": "NS",
+    "hue": 268
+  },
+  {
+    "id": 28,
+    "role": "Full Stack Development",
+    "company": "Online Tyre Bazaar (OTB)",
+    "fullRole": "Full Stack Development — Online Tyre Bazaar (OTB)",
+    "batch": "2027 track — final-year students; calendar year not stated",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-full-stack-development-internship-at-online-tyre-bazaar-otb1793155354",
+    "deadline": "27-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": false,
+    "monogram": "OT",
+    "hue": 306
+  },
+  {
+    "id": 29,
+    "role": "Data Analytics",
+    "company": "QuickHyre",
+    "fullRole": "Data Analytics — QuickHyre",
+    "batch": "2027 track — final-year students; calendar year not stated",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-data-analytics-internship-at-quickhyre1791346480",
+    "deadline": "06-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": false,
+    "monogram": "Q",
+    "hue": 295
+  },
+  {
+    "id": 30,
+    "role": "Software Development Engineering (Web)",
+    "company": "QuickHyre",
+    "fullRole": "Software Development Engineering (Web) — QuickHyre",
+    "batch": "2027 track — final-year students; calendar year not stated",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-software-development-engineering-web-internship-at-quickhyre1791438415",
+    "deadline": "07-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": false,
+    "monogram": "Q",
+    "hue": 295
+  },
+  {
+    "id": 31,
+    "role": "Forward Deployed Software Engineer",
+    "company": "Route Mobile Limited",
+    "fullRole": "Forward Deployed Software Engineer — Route Mobile Limited",
+    "batch": "2027 track — final-year students; calendar year not stated",
+    "location": "Onsite — Gurgaon, Mumbai, Bangalore",
+    "link": "https://internshala.com/internship/detail/forward-deployed-software-engineer-internship-in-multiple-locations-at-route-mobile-limited1791288694",
+    "deadline": "05-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": false,
+    "monogram": "RM",
+    "hue": 187
+  },
+  {
+    "id": 32,
+    "role": "Mobile App Development",
+    "company": "StoryMirror Infotech Private Limited",
+    "fullRole": "Mobile App Development — StoryMirror Infotech Private Limited",
+    "batch": "2027 track — final-year students; calendar year not stated",
+    "location": "Onsite — Mumbai",
+    "link": "https://internshala.com/internship/detail/mobile-app-development-internship-in-mumbai-at-storymirror-infotech-private-limited1792989697",
+    "deadline": "25-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": false,
+    "monogram": "SI",
+    "hue": 349
+  },
+  {
+    "id": 33,
+    "role": "Flutter Development",
+    "company": "STRATEGICVISIONCODER TECH AI SOLUTIONS PRIVATE LIMITED",
+    "fullRole": "Flutter Development — STRATEGICVISIONCODER TECH AI SOLUTIONS PRIVATE LIMITED",
+    "batch": "2027 track — final-year students; calendar year not stated",
+    "location": "Onsite — Hyderabad",
+    "link": "https://internshala.com/internship/detail/flutter-development-internship-in-hyderabad-at-strategicvisioncoder-tech-ai-solutions-private-limited1793084550",
+    "deadline": "26-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": false,
+    "monogram": "ST",
+    "hue": 146
+  },
+  {
+    "id": 34,
+    "role": "Web Development",
+    "company": "Times Media Sdn Bhd",
+    "fullRole": "Web Development — Times Media Sdn Bhd",
+    "batch": "2027 track — final-semester students only; confirm semester timing",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-web-development-internship-at-times-media-sdn-bhd1793176543",
+    "deadline": "27-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": false,
+    "monogram": "TM",
+    "hue": 157
+  },
+  {
+    "id": 35,
+    "role": "Front End Development",
+    "company": "VPLytics Solutions Private Limited",
+    "fullRole": "Front End Development — VPLytics Solutions Private Limited",
+    "batch": "2027 track — final-year students; calendar year not stated",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-front-end-development-internship-at-vplytics-solutions-private-limited1793273804",
+    "deadline": "28-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": false,
+    "monogram": "VS",
+    "hue": 309
+  },
+  {
+    "id": 36,
+    "role": "Web Development (MERN Stack)",
+    "company": "A2IT InternEdge",
+    "fullRole": "Web Development (MERN Stack) — A2IT InternEdge",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Mohali",
+    "link": "https://internshala.com/internship/detail/web-development-mern-stack-internship-in-mohali-at-a2it-internedge1792401877",
+    "deadline": "18-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "AI",
+    "hue": 301
+  },
+  {
+    "id": 37,
+    "role": "Full Stack Development",
+    "company": "Ace 360",
+    "fullRole": "Full Stack Development — Ace 360",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Mumbai",
+    "link": "https://internshala.com/internship/detail/full-stack-development-internship-in-mumbai-at-ace-3601792736451",
+    "deadline": "22-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "A3",
+    "hue": 0
+  },
+  {
+    "id": 38,
+    "role": "Data Analytics",
+    "company": "Adex Media Hub",
+    "fullRole": "Data Analytics — Adex Media Hub",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-data-analytics-internship-at-adex-media-hub1792413346",
+    "deadline": "18-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "AM",
+    "hue": 79
+  },
+  {
+    "id": 39,
+    "role": "AI & Technology",
+    "company": "AICNI",
+    "fullRole": "AI & Technology — AICNI",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Aluva (Hybrid)",
+    "link": "https://internshala.com/internship/detail/ai-technology-internship-in-aluva-at-aicni1792131784",
+    "deadline": "15-11-2026",
+    "modeType": "hybrid",
+    "modeBadge": "🔀 Hybrid",
+    "modeClass": "badge-hybrid",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "A",
+    "hue": 206
+  },
+  {
+    "id": 40,
+    "role": "AI Product Developer - Python & React (Remote)",
+    "company": "AIVOA",
+    "fullRole": "AI Product Developer - Python & React (Remote) — AIVOA",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-ai-product-developer-python-react-remote-internship-at-aivoa1792558013",
+    "deadline": "20-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "A",
+    "hue": 128
+  },
+  {
+    "id": 41,
+    "role": "Intern - AI & Software Engineering",
+    "company": "Alehar",
+    "fullRole": "Intern - AI & Software Engineering — Alehar",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Not specified (Bengaluru)",
+    "link": "https://www.alehar.com/about/careers/tech-intern",
+    "deadline": "Not specified",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "A",
+    "hue": 319
+  },
+  {
+    "id": 42,
+    "role": "AI Knowledge Graph & Cloud Engineering",
+    "company": "Alethia Works Private Limited",
+    "fullRole": "AI Knowledge Graph & Cloud Engineering — Alethia Works Private Limited",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-ai-knowledge-graph-cloud-engineering-internship-at-alethia-works-private-limited1791887337",
+    "deadline": "12-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "AW",
+    "hue": 155
+  },
+  {
+    "id": 43,
+    "role": "Artificial Intelligence (AI)",
+    "company": "Almost Magic Private Limited",
+    "fullRole": "Artificial Intelligence (AI) — Almost Magic Private Limited",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Chandigarh, Mohali, Panchkula",
+    "link": "https://internshala.com/internship/detail/artificial-intelligence-ai-internship-in-multiple-locations-at-almost-magic-private-limited1790844424",
+    "deadline": "31-10-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "AM",
+    "hue": 200
+  },
+  {
+    "id": 44,
+    "role": "Data Analyst",
+    "company": "Apport Software Solutions Private Limited",
+    "fullRole": "Data Analyst — Apport Software Solutions Private Limited",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Mumbai",
+    "link": "https://internshala.com/internship/detail/data-analyst-internship-in-mumbai-at-apport-software-solutions-private-limited1792412806",
+    "deadline": "18-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "AS",
+    "hue": 26
+  },
+  {
+    "id": 45,
+    "role": "Artificial Intelligence (AI)",
+    "company": "Assetcues Solutions Private Limited",
+    "fullRole": "Artificial Intelligence (AI) — Assetcues Solutions Private Limited",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Pune",
+    "link": "https://internshala.com/internship/detail/artificial-intelligence-ai-internship-in-pune-at-assetcues-solutions-private-limited1793244005",
+    "deadline": "28-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "AS",
+    "hue": 257
+  },
+  {
+    "id": 46,
+    "role": "Software Engineering Intern",
+    "company": "Bear Systems",
+    "fullRole": "Software Engineering Intern — Bear Systems",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Delhi NCR",
+    "link": "https://bearsystems.in/careers/software-engineering-intern",
+    "deadline": "26-01-2027",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "BS",
+    "hue": 336
+  },
+  {
+    "id": 47,
+    "role": "Web Development",
+    "company": "Big Vision Investing",
+    "fullRole": "Web Development — Big Vision Investing",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Bangalore",
+    "link": "https://internshala.com/internship/detail/web-development-internship-in-bangalore-at-big-vision-investing1792665975",
+    "deadline": "12-12-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "BV",
+    "hue": 141
+  },
+  {
+    "id": 48,
+    "role": "Wix Studio (UI/UX)",
+    "company": "Brain Quest",
+    "fullRole": "Wix Studio (UI/UX) — Brain Quest",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-wix-studio-ui-ux-internship-at-brain-quest1790751032",
+    "deadline": "30-10-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "BQ",
+    "hue": 296
+  },
+  {
+    "id": 49,
+    "role": "Full Stack Developer",
+    "company": "Brandsea",
+    "fullRole": "Full Stack Developer — Brandsea",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Bangalore (Hybrid)",
+    "link": "https://internshala.com/internship/detail/full-stack-developer-internship-in-bangalore-at-brandsea1792751110",
+    "deadline": "22-11-2026",
+    "modeType": "hybrid",
+    "modeBadge": "🔀 Hybrid",
+    "modeClass": "badge-hybrid",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "B",
+    "hue": 264
+  },
+  {
+    "id": 50,
+    "role": "Software Development",
+    "company": "Brava",
+    "fullRole": "Software Development — Brava",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-software-development-internship-at-brava1790844840",
+    "deadline": "31-10-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "B",
+    "hue": 132
+  },
+  {
+    "id": 51,
+    "role": "AI Automation Expert",
+    "company": "Calmveda",
+    "fullRole": "AI Automation Expert — Calmveda",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Delhi (Hybrid)",
+    "link": "https://internshala.com/internship/detail/part-time-ai-automation-expert-internship-in-delhi-at-calmveda1791198455",
+    "deadline": "04-11-2026",
+    "modeType": "hybrid",
+    "modeBadge": "🔀 Hybrid",
+    "modeClass": "badge-hybrid",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "C",
+    "hue": 3
+  },
+  {
+    "id": 52,
+    "role": "Software Testing",
+    "company": "CodeRoofs",
+    "fullRole": "Software Testing — CodeRoofs",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-part-time-software-testing-internship-at-coderoofs1791100981",
+    "deadline": "03-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "C",
+    "hue": 358
+  },
+  {
+    "id": 53,
+    "role": "Website Developer",
+    "company": "CollabAdda",
+    "fullRole": "Website Developer — CollabAdda",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-part-time-website-developer-internship-at-collabadda1793161451",
+    "deadline": "27-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "C",
+    "hue": 221
+  },
+  {
+    "id": 54,
+    "role": "Artificial Intelligence (AI)",
+    "company": "Cornixe",
+    "fullRole": "Artificial Intelligence (AI) — Cornixe",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-part-time-artificial-intelligence-ai-internship-at-cornixe1793192523",
+    "deadline": "27-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "C",
+    "hue": 322
+  },
+  {
+    "id": 55,
+    "role": "Cloud Computing",
+    "company": "Cornixe",
+    "fullRole": "Cloud Computing — Cornixe",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-cloud-computing-internship-at-cornixe1792219433",
+    "deadline": "16-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "C",
+    "hue": 322
+  },
+  {
+    "id": 56,
+    "role": "Cyber Security",
+    "company": "Cornixe",
+    "fullRole": "Cyber Security — Cornixe",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-cyber-security-internship-at-cornixe1792219484",
+    "deadline": "16-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "C",
+    "hue": 322
+  },
+  {
+    "id": 57,
+    "role": "Data Science",
+    "company": "Cornixe",
+    "fullRole": "Data Science — Cornixe",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-data-science-internship-at-cornixe1792145760",
+    "deadline": "15-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "C",
+    "hue": 322
+  },
+  {
+    "id": 58,
+    "role": "Web Development",
+    "company": "Cornixe",
+    "fullRole": "Web Development — Cornixe",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-web-development-internship-at-cornixe1793272040",
+    "deadline": "28-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "C",
+    "hue": 322
+  },
+  {
+    "id": 59,
+    "role": "Software Development & Automation Intern",
+    "company": "Curated Living Solutions (DivyaSree Group)",
+    "fullRole": "Software Development & Automation Intern — Curated Living Solutions (DivyaSree Group)",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Bengaluru",
+    "link": "https://in.linkedin.com/jobs/view/software-development-automation-intern-at-curated-living-solutions-a-divyasree-group-company-4467190927",
+    "deadline": "Not specified",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "CL",
+    "hue": 163
+  },
+  {
+    "id": 60,
+    "role": "Artificial Intelligence (AI)",
+    "company": "Dakini AI",
+    "fullRole": "Artificial Intelligence (AI) — Dakini AI",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-artificial-intelligence-ai-internship-at-dakini-ai1792043436",
+    "deadline": "14-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "DA",
+    "hue": 126
+  },
+  {
+    "id": 61,
+    "role": "Quality Analyst",
+    "company": "DataChannel Technologies",
+    "fullRole": "Quality Analyst — DataChannel Technologies",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Gurgaon (Hybrid)",
+    "link": "https://internshala.com/internship/detail/quality-analyst-internship-in-gurgaon-at-datachannel-technologies1793260830",
+    "deadline": "28-11-2026",
+    "modeType": "hybrid",
+    "modeBadge": "🔀 Hybrid",
+    "modeClass": "badge-hybrid",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "DT",
+    "hue": 231
+  },
+  {
+    "id": 62,
+    "role": "Software Development",
+    "company": "DigiPlus IT",
+    "fullRole": "Software Development — DigiPlus IT",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Mumbai",
+    "link": "https://internshala.com/internship/detail/software-development-internship-in-mumbai-at-digiplus-it1792044612",
+    "deadline": "14-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "DI",
+    "hue": 90
+  },
+  {
+    "id": 63,
+    "role": "Machine Learning",
+    "company": "DSights Consultancy Services Private Limited",
+    "fullRole": "Machine Learning — DSights Consultancy Services Private Limited",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-machine-learning-internship-at-dsights-consultancy-services-private-limited1792642432",
+    "deadline": "21-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "DC",
+    "hue": 90
+  },
+  {
+    "id": 64,
+    "role": "Backend Software Engineering Intern",
+    "company": "Enterpret",
+    "fullRole": "Backend Software Engineering Intern — Enterpret",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Bengaluru",
+    "link": "https://job-boards.greenhouse.io/enterpret/jobs/7847134003",
+    "deadline": "Not specified",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "E",
+    "hue": 97
+  },
+  {
+    "id": 65,
+    "role": "Full Stack Development",
+    "company": "Euphotic Labs Private Limited",
+    "fullRole": "Full Stack Development — Euphotic Labs Private Limited",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Bangalore",
+    "link": "https://internshala.com/internship/detail/full-stack-development-internship-in-bangalore-at-euphotic-labs-private-limited1790420869",
+    "deadline": "30-10-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "EL",
+    "hue": 108
+  },
+  {
+    "id": 66,
+    "role": "Full Stack Development",
+    "company": "Ikaansh Edutech Private Limited",
+    "fullRole": "Full Stack Development — Ikaansh Edutech Private Limited",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Bhiwani (Hybrid)",
+    "link": "https://internshala.com/internship/detail/full-stack-development-internship-in-bhiwani-at-ikaansh-edutech-private-limited1792067814",
+    "deadline": "14-11-2026",
+    "modeType": "hybrid",
+    "modeBadge": "🔀 Hybrid",
+    "modeClass": "badge-hybrid",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "IE",
+    "hue": 234
+  },
+  {
+    "id": 67,
+    "role": "Development of Android Applications",
+    "company": "Indian Army",
+    "fullRole": "Development of Android Applications — Indian Army",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Delhi",
+    "link": "https://internshala.com/internship/detail/development-of-android-applications-internship-in-delhi-at-indian-army1786005417",
+    "deadline": "06-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "IA",
+    "hue": 302
+  },
+  {
+    "id": 68,
+    "role": "Tech & AI Internship (frontend / backend / full stack / AI-ML tracks)",
+    "company": "Inforida",
+    "fullRole": "Tech & AI Internship (frontend / backend / full stack / AI-ML tracks) — Inforida",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote-first",
+    "link": "https://inforida.com/careers",
+    "deadline": "Not specified",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "I",
+    "hue": 70
+  },
+  {
+    "id": 69,
+    "role": "Artificial Intelligence (AI)",
+    "company": "Innoknowvex",
+    "fullRole": "Artificial Intelligence (AI) — Innoknowvex",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-artificial-intelligence-ai-internship-at-innoknowvex1793251674",
+    "deadline": "28-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "I",
+    "hue": 48
+  },
+  {
+    "id": 70,
+    "role": "Full Stack Development",
+    "company": "Innoknowvex",
+    "fullRole": "Full Stack Development — Innoknowvex",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Chennai, Coimbatore, Madurai, Tirunelveli, Thanjavur, Tiruppur, Tiruchirappalli, Salem, Vellore",
+    "link": "https://internshala.com/internship/detail/full-stack-development-internship-in-multiple-locations-at-innoknowvex1792739765",
+    "deadline": "22-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "I",
+    "hue": 48
+  },
+  {
+    "id": 71,
+    "role": "Machine Learning",
+    "company": "Innoknowvex",
+    "fullRole": "Machine Learning — Innoknowvex",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-machine-learning-internship-at-innoknowvex1793098232",
+    "deadline": "26-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "I",
+    "hue": 48
+  },
+  {
+    "id": 72,
+    "role": "Software Development",
+    "company": "Interviewsetu",
+    "fullRole": "Software Development — Interviewsetu",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-part-time-software-development-internship-at-interviewsetu1793275534",
+    "deadline": "28-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "I",
+    "hue": 196
+  },
+  {
+    "id": 73,
+    "role": "Voice AI",
+    "company": "Jarvis Technology & Strategy Consulting",
+    "fullRole": "Voice AI — Jarvis Technology & Strategy Consulting",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Delhi",
+    "link": "https://internshala.com/internship/detail/voice-ai-internship-in-delhi-at-jarvis-technology-strategy-consulting1793279784",
+    "deadline": "28-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "JT",
+    "hue": 200
+  },
+  {
+    "id": 74,
+    "role": "QA Testing",
+    "company": "JdWeb Services",
+    "fullRole": "QA Testing — JdWeb Services",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-qa-testing-internship-at-jdweb-services1790675212",
+    "deadline": "29-10-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "JS",
+    "hue": 172
+  },
+  {
+    "id": 75,
+    "role": "Manual Testing",
+    "company": "JSM Technologies Private Limited",
+    "fullRole": "Manual Testing — JSM Technologies Private Limited",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Bangalore",
+    "link": "https://internshala.com/internship/detail/manual-testing-internship-in-bangalore-at-jsm-technologies-private-limited1790836764",
+    "deadline": "31-10-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "JT",
+    "hue": 117
+  },
+  {
+    "id": 76,
+    "role": "Full Stack Development",
+    "company": "Klanvision IT Solutions Private Limited Company",
+    "fullRole": "Full Stack Development — Klanvision IT Solutions Private Limited Company",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-part-time-full-stack-development-internship-at-klanvision-it-solutions-private-limited-company1792987131",
+    "deadline": "25-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "KI",
+    "hue": 329
+  },
+  {
+    "id": 77,
+    "role": "Web Developer (Figma To Code)",
+    "company": "KMATS",
+    "fullRole": "Web Developer (Figma To Code) — KMATS",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Hybrid initially, then onsite (Mumbai)",
+    "link": "https://internshala.com/internship/detail/web-developer-figma-to-code-internship-in-mumbai-at-kmats1792751214",
+    "deadline": "22-11-2026",
+    "modeType": "hybrid",
+    "modeBadge": "🔀 Hybrid",
+    "modeClass": "badge-hybrid",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "K",
+    "hue": 54
+  },
+  {
+    "id": 78,
+    "role": "Full Stack Development",
+    "company": "Lacritz.ai",
+    "fullRole": "Full Stack Development — Lacritz.ai",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-full-stack-development-internship-at-lacritzai1793173473",
+    "deadline": "27-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "L",
+    "hue": 77
+  },
+  {
+    "id": 79,
+    "role": "Unity3D Simulation Development (Virtual Skill Labs – Edtech/Medtech Sector)",
+    "company": "Mediosim Technology Private Limited",
+    "fullRole": "Unity3D Simulation Development (Virtual Skill Labs – Edtech/Medtech Sector) — Mediosim Technology Private Limited",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Pune",
+    "link": "https://internshala.com/internship/detail/unity3d-simulation-development-virtual-skill-labs--edtech-medtech-sector-internship-in-pune-at-mediosim-technology-private-limited1791890808",
+    "deadline": "12-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "MT",
+    "hue": 340
+  },
+  {
+    "id": 80,
+    "role": "Zoho CRM Developer",
+    "company": "MoneyGrow Asset",
+    "fullRole": "Zoho CRM Developer — MoneyGrow Asset",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Mumbai (Hybrid)",
+    "link": "https://internshala.com/internship/detail/part-time-zoho-crm-developer-internship-in-mumbai-at-moneygrow-asset1792149395",
+    "deadline": "15-11-2026",
+    "modeType": "hybrid",
+    "modeBadge": "🔀 Hybrid",
+    "modeClass": "badge-hybrid",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "MA",
+    "hue": 243
+  },
+  {
+    "id": 81,
+    "role": "Full-Stack Development Intern",
+    "company": "MSET",
+    "fullRole": "Full-Stack Development Intern — MSET",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Not specified (Chandigarh / Gurugram / Bengaluru)",
+    "link": "https://www.mset.io/careers/fullstack-development-intern",
+    "deadline": "Not specified",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "M",
+    "hue": 253
+  },
+  {
+    "id": 82,
+    "role": "Software Development & Testing",
+    "company": "Nivoryx Systems Private Limited",
+    "fullRole": "Software Development & Testing — Nivoryx Systems Private Limited",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Delhi",
+    "link": "https://internshala.com/internship/detail/software-development-testing-internship-in-delhi-at-nivoryx-systems-private-limited1791868480",
+    "deadline": "12-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "NS",
+    "hue": 350
+  },
+  {
+    "id": 83,
+    "role": "Software Engineering Intern",
+    "company": "Outcom.AI",
+    "fullRole": "Software Engineering Intern — Outcom.AI",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Bengaluru",
+    "link": "https://outcom.ai/careers/software-engineering-intern",
+    "deadline": "Not specified",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "O",
+    "hue": 197
+  },
+  {
+    "id": 84,
+    "role": "Artificial Intelligence (AI)",
+    "company": "People Matter",
+    "fullRole": "Artificial Intelligence (AI) — People Matter",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Mumbai",
+    "link": "https://internshala.com/internship/detail/part-time-artificial-intelligence-ai-internship-in-mumbai-at-people-matter1793242204",
+    "deadline": "28-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "PM",
+    "hue": 106
+  },
+  {
+    "id": 85,
+    "role": "Data Engineering",
+    "company": "Primenumbers Technologies",
+    "fullRole": "Data Engineering — Primenumbers Technologies",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Bangalore",
+    "link": "https://internshala.com/internship/detail/data-engineering-internship-in-bangalore-at-primenumbers-technologies1791894510",
+    "deadline": "12-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "PT",
+    "hue": 233
+  },
+  {
+    "id": 86,
+    "role": "Full Stack Development",
+    "company": "PRODUCTFLOAI PRIVATE LIMITED",
+    "fullRole": "Full Stack Development — PRODUCTFLOAI PRIVATE LIMITED",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-full-stack-development-internship-at-productfloai-private-limited1791345853",
+    "deadline": "18-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "PP",
+    "hue": 79
+  },
+  {
+    "id": 87,
+    "role": "Artificial Intelligence (AI)",
+    "company": "QuickHyre",
+    "fullRole": "Artificial Intelligence (AI) — QuickHyre",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-part-time-artificial-intelligence-ai-internship-at-quickhyre1791349678",
+    "deadline": "06-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "Q",
+    "hue": 295
+  },
+  {
+    "id": 88,
+    "role": "Full Stack Development",
+    "company": "Rajvault",
+    "fullRole": "Full Stack Development — Rajvault",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-full-stack-development-internship-at-rajvault1793072214",
+    "deadline": "26-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "R",
+    "hue": 201
+  },
+  {
+    "id": 89,
+    "role": "Web Development",
+    "company": "Reach Skyline",
+    "fullRole": "Web Development — Reach Skyline",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Madurai",
+    "link": "https://internshala.com/internship/detail/web-development-internship-in-madurai-at-reach-skyline1791294941",
+    "deadline": "05-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "RS",
+    "hue": 256
+  },
+  {
+    "id": 90,
+    "role": "Software Development",
+    "company": "Reflex Realty LLP",
+    "fullRole": "Software Development — Reflex Realty LLP",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Mumbai",
+    "link": "https://internshala.com/internship/detail/software-development-internship-in-mumbai-at-reflex-realty-llp1792066258",
+    "deadline": "14-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "RR",
+    "hue": 335
+  },
+  {
+    "id": 91,
+    "role": "Full Stack Development",
+    "company": "Seventh Ray Consulting And Technology Private Limited",
+    "fullRole": "Full Stack Development — Seventh Ray Consulting And Technology Private Limited",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-part-time-full-stack-development-internship-at-seventh-ray-consulting-and-technology-private-limited1793013442",
+    "deadline": "27-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "SR",
+    "hue": 345
+  },
+  {
+    "id": 92,
+    "role": "Artificial Intelligence (AI)",
+    "company": "Simpli Intern",
+    "fullRole": "Artificial Intelligence (AI) — Simpli Intern",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Tamil Nadu (Hybrid)",
+    "link": "https://internshala.com/internship/detail/work-from-home-part-time-artificial-intelligence-ai-internship-at-simpli-intern1791881325",
+    "deadline": "12-11-2026",
+    "modeType": "hybrid",
+    "modeBadge": "🔀 Hybrid",
+    "modeClass": "badge-hybrid",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "SI",
+    "hue": 140
+  },
+  {
+    "id": 93,
+    "role": "Software Development Engineer (SDE) – AI & Machine Learning",
+    "company": "Street Surge Technologies",
+    "fullRole": "Software Development Engineer (SDE) – AI & Machine Learning — Street Surge Technologies",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Gurgaon",
+    "link": "https://internshala.com/internship/detail/software-development-engineer-sde--ai-machine-learning-internship-in-gurgaon-at-street-surge-technologies1792396187",
+    "deadline": "18-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "SS",
+    "hue": 201
+  },
+  {
+    "id": 94,
+    "role": "AI Research",
+    "company": "Synergy Labs",
+    "fullRole": "AI Research — Synergy Labs",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Gurgaon",
+    "link": "https://internshala.com/internship/detail/ai-research-internship-in-gurgaon-at-synergy-labs1792154183",
+    "deadline": "15-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "SL",
+    "hue": 335
+  },
+  {
+    "id": 95,
+    "role": "Backend Development",
+    "company": "The ProEducator",
+    "fullRole": "Backend Development — The ProEducator",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-backend-development-internship-at-the-proeducator1791996191",
+    "deadline": "13-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "TP",
+    "hue": 49
+  },
+  {
+    "id": 96,
+    "role": "AI & Full-Stack Development",
+    "company": "The Signature Design Studio",
+    "fullRole": "AI & Full-Stack Development — The Signature Design Studio",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Bangalore (Hybrid)",
+    "link": "https://internshala.com/internship/detail/ai-full-stack-development-internship-in-bangalore-at-the-signature-design-studio1793099094",
+    "deadline": "26-11-2026",
+    "modeType": "hybrid",
+    "modeBadge": "🔀 Hybrid",
+    "modeClass": "badge-hybrid",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "TS",
+    "hue": 351
+  },
+  {
+    "id": 97,
+    "role": "Cyber Security OSINT & Growth Operative",
+    "company": "TribeTorch",
+    "fullRole": "Cyber Security OSINT & Growth Operative — TribeTorch",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-part-time-cyber-security-osint-growth-operative-internship-at-tribetorch1790323783",
+    "deadline": "29-10-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "T",
+    "hue": 18
+  },
+  {
+    "id": 98,
+    "role": "AI Agent Development",
+    "company": "VDU Data And Analytics",
+    "fullRole": "AI Agent Development — VDU Data And Analytics",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-ai-agent-development-internship-at-vdu-data-and-analytics1792838744",
+    "deadline": "23-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "VD",
+    "hue": 184
+  },
+  {
+    "id": 99,
+    "role": "Mobile App Development",
+    "company": "Virastra Technologies Private Limited",
+    "fullRole": "Mobile App Development — Virastra Technologies Private Limited",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Remote",
+    "link": "https://internshala.com/internship/detail/work-from-home-mobile-app-development-internship-at-virastra-technologies-private-limited1793013855",
+    "deadline": "25-11-2026",
+    "modeType": "remote",
+    "modeBadge": "🌐 Remote",
+    "modeClass": "badge-remote",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "VT",
+    "hue": 285
+  },
+  {
+    "id": 100,
+    "role": "Full Stack Development",
+    "company": "Webshark Web Services",
+    "fullRole": "Full Stack Development — Webshark Web Services",
+    "batch": "2027 / 2028 students — graduation years not specified",
+    "location": "Onsite — Bangalore",
+    "link": "https://internshala.com/internship/detail/full-stack-development-internship-in-bangalore-at-webshark-web-services1791207137",
+    "deadline": "04-11-2026",
+    "modeType": "onsite",
+    "modeBadge": "🏢 Onsite",
+    "modeClass": "badge-onsite",
+    "b2027": true,
+    "b2028": true,
+    "monogram": "WW",
+    "hue": 183
+  }
+];
+
+let currentFilterMode = 'all';
+let currentFilterBatch = 'all';
+let currentSearch = '';
+
+const grid = document.getElementById('jobsGrid');
+const emptyState = document.getElementById('emptyState');
+const matchCount = document.getElementById('matchCount');
+const searchInput = document.getElementById('searchInput');
+const resetBtn = document.getElementById('resetBtn');
+const toast = document.getElementById('toast');
+
+function showToast(msg) {
+  const toastMsg = document.getElementById('toastMsg');
+  if (toastMsg) toastMsg.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2600);
+}
+
+function copyLink(link, e) {
+  if (e) e.stopPropagation();
+  navigator.clipboard.writeText(link).then(() => {
+    showToast('Direct application link copied!');
+  }).catch(() => {
+    // Fallback
+    const input = document.createElement('input');
+    input.value = link;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+    showToast('Direct application link copied!');
+  });
+}
+
+function renderCards() {
+  const filtered = INTERNSHIPS.filter(item => {
+    // Mode filter
+    if (currentFilterMode === 'remote' && item.modeType !== 'remote') return false;
+    if (currentFilterMode === 'onsite' && item.modeType !== 'onsite' && item.modeType !== 'hybrid') return false;
+    if (currentFilterMode === 'hybrid' && item.modeType !== 'hybrid') return false;
+
+    // Batch filter
+    if (currentFilterBatch === '2027' && !item.b2027) return false;
+    if (currentFilterBatch === '2028' && !item.b2028) return false;
+
+    // Search query
+    if (currentSearch) {
+      const q = currentSearch.toLowerCase();
+      const inRole = item.role.toLowerCase().includes(q);
+      const inComp = item.company.toLowerCase().includes(q);
+      const inLoc = item.location.toLowerCase().includes(q);
+      const inBatch = item.batch.toLowerCase().includes(q);
+      if (!inRole && !inComp && !inLoc && !inBatch) return false;
+    }
+
+    return true;
+  });
+
+  matchCount.textContent = filtered.length;
+
+  const isFiltered = currentFilterMode !== 'all' || currentFilterBatch !== 'all' || currentSearch.length > 0;
+  resetBtn.style.display = isFiltered ? 'inline-flex' : 'none';
+
+  if (filtered.length === 0) {
+    grid.innerHTML = '';
+    emptyState.style.display = 'block';
+    return;
+  }
+
+  emptyState.style.display = 'none';
+
+  grid.innerHTML = filtered.map(item => {
+    const bgGradient = `linear-gradient(135deg, hsl(${item.hue}, 65%, 45%), hsl(${(item.hue + 45) % 360}, 75%, 40%))`;
+
+    return `
+      <article class="job-card" data-id="${item.id}">
+        <div>
+          <div class="card-header">
+            <div class="company-logo" style="background:${bgGradient}">
+              ${item.monogram}
+            </div>
+            <div class="card-title-group">
+              <div class="company-name" title="${item.company}">${item.company}</div>
+              <h2 class="role-title">${item.role}</h2>
+            </div>
+          </div>
+
+          <div class="badges-wrap">
+            <span class="badge ${item.modeClass}">${item.modeBadge}</span>
+            <span class="badge badge-batch">🎓 ${item.b2028 ? '2027 & 2028' : '2027 Batch'}</span>
+          </div>
+
+          <div class="card-details">
+            <div class="detail-item">
+              <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div class="detail-text"><b>Location:</b> ${item.location}</div>
+            </div>
+            <div class="detail-item">
+              <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div class="detail-text"><b>Deadline:</b> ${item.deadline}</div>
+            </div>
+            <div class="detail-item">
+              <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <div class="detail-text"><b>Eligibility:</b> ${item.batch}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn-apply" title="Open official application page">
+            <span>Apply Now</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+          </a>
+          <button class="btn-copy" onclick="copyLink('${item.link}', event)" title="Copy link to clipboard">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          </button>
+        </div>
+      </article>
+    `;
+  }).join('');
+}
+
+// Search listener
+searchInput.addEventListener('input', e => {
+  currentSearch = e.target.value.trim();
+  renderCards();
+});
+
+// Chips filter listener
+document.querySelectorAll('.chip[data-filter]').forEach(chip => {
+  chip.addEventListener('click', () => {
+    const filterType = chip.getAttribute('data-filter');
+    const filterVal = chip.getAttribute('data-val');
+
+    document.querySelectorAll(`.chip[data-filter="${filterType}"]`).forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+
+    if (filterType === 'mode') currentFilterMode = filterVal;
+    if (filterType === 'batch') currentFilterBatch = filterVal;
+
+    renderCards();
+  });
+});
+
+function resetAllFilters() {
+  currentFilterMode = 'all';
+  currentFilterBatch = 'all';
+  currentSearch = '';
+  searchInput.value = '';
+
+  document.querySelectorAll('.chip[data-filter]').forEach(c => {
+    if (c.getAttribute('data-val') === 'all') c.classList.add('active');
+    else c.classList.remove('active');
+  });
+
+  renderCards();
+}
+
+resetBtn.addEventListener('click', resetAllFilters);
+
+// Initial render
+renderCards();
+</script>
+</body>
+</html>

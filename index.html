@@ -81,6 +81,17 @@ button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:
 .res-card-link{display:inline-flex;align-items:center;gap:6px;font-size:.86rem;font-weight:700;text-decoration:none;color:#fff;background:var(--p2);padding:6px 14px;border-radius:8px;transition:opacity .18s}
 .res-card-link:hover{opacity:.9}
 @media(max-width:540px){.notes-banner{flex-wrap:wrap}.nb-arrow{width:100%;text-align:center}}
+
+.intern-banner{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--p1);border-left:5px solid var(--p1);border-radius:12px;padding:14px 16px;margin:10px 0 6px;text-decoration:none;color:inherit;transition:transform .18s,box-shadow .18s}
+.intern-banner:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(11,143,128,.18)}
+.ib-icon{font-size:1.9rem;line-height:1}
+.ib-body{flex:1;min-width:0}
+.ib-title{font-family:"Bricolage Grotesque",Figtree,sans-serif;font-weight:800;font-size:1.02rem;color:var(--p1);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ib-tag{font-size:.68rem;background:rgba(11,143,128,.12);color:var(--p1);padding:2px 7px;border-radius:99px;font-weight:700;text-transform:uppercase}
+.ib-desc{font-size:.88rem;color:var(--muted);margin-top:2px;line-height:1.4}
+.ib-arrow{font-family:"Bricolage Grotesque",Figtree,sans-serif;font-weight:800;font-size:.88rem;color:var(--p1);white-space:nowrap;padding:6px 14px;border-radius:8px;background:rgba(11,143,128,.12);transition:all .2s}
+.intern-banner:hover .ib-arrow{background:var(--p1);color:#fff}
+@media(max-width:540px){.intern-banner{flex-wrap:wrap}.ib-arrow{width:100%;text-align:center}}
 </style>
 </head>
 <body>
@@ -94,6 +105,11 @@ button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
     <span>Python Notes</span>
     <span class="nav-badge">New</span>
+  </a>
+  <a href="internships.html" class="nav-item">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+    <span>Internships</span>
+    <span class="nav-badge" style="background:var(--p1)">100 Live</span>
   </a>
 </nav>
 <header>
