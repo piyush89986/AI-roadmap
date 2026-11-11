@@ -67,27 +67,90 @@ h1, h2, h3, h4 {
   padding: 0 20px 80px;
 }
 
-/* ── NAV BAR ── */
-.nav-bar {
+/* ── UNIFIED SITE NAVBAR ── */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(238, 243, 248, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 2px 14px rgba(20,33,61,0.04);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .site-nav {
+    background: rgba(15, 23, 38, 0.88);
+    border-bottom-color: var(--line);
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+  }
+}
+.site-nav-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
   gap: 10px;
-  padding: 20px 0 16px;
-  flex-wrap: wrap;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: "Bricolage Grotesque", Figtree, sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+}
+.brand-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, var(--p1), var(--p2));
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
+.brand-name { font-weight: 800; }
+.brand-sub {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted);
+  background: var(--tint);
+  padding: 2px 7px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: nowrap;
 }
 .nav-item {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 8px 16px;
+  gap: 6px;
+  padding: 7px 13px;
   border-radius: 99px;
-  font-size: .9rem;
+  font-size: 0.86rem;
   font-weight: 600;
   text-decoration: none;
   color: var(--muted);
   background: var(--surface);
   border: 1px solid var(--line);
-  transition: all .2s ease;
+  transition: all .18s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .nav-item:hover {
   color: var(--ink);
@@ -98,16 +161,43 @@ h1, h2, h3, h4 {
   background: var(--ink);
   color: var(--bg);
   border-color: var(--ink);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 .nav-badge {
-  background: var(--p1);
-  color: #fff;
-  font-size: .68rem;
-  padding: 2px 7px;
+  font-size: 0.65rem;
+  padding: 2px 6px;
   border-radius: 99px;
-  font-weight: 700;
-  letter-spacing: .5px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
   text-transform: uppercase;
+  line-height: 1;
+}
+.badge-new { background: #f3872e; color: #fff; }
+.badge-live { background: var(--p1); color: #fff; }
+
+@media (max-width: 768px) {
+  .site-nav-inner {
+    padding: 8px 14px;
+    gap: 10px;
+  }
+  .nav-links {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding: 2px 0;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .brand-sub { display: none; }
+}
+@media (max-width: 580px) {
+  .site-nav-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .nav-brand {
+    align-self: flex-start;
+  }
 }
 
 /* ── HERO ── */
@@ -573,25 +663,38 @@ footer a:hover {
 </style>
 </head>
 <body>
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="brand-badge">⚡</div>
+      <span class="brand-name">AI Roadmap</span>
+      <span class="brand-sub">Sheryians Hub</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg>
+        <span>Roadmap</span>
+      </a>
+      <a href="notes.html" class="nav-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span>Python Notes</span>
+      </a>
+      <a href="pandas.html" class="nav-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"></path><path d="M3 9h18"></path><path d="M3 15h18"></path><path d="M9 3v18"></path><path d="M15 3v18"></path></svg>
+        <span>Pandas Course</span>
+        <span class="nav-badge badge-new">New</span>
+      </a>
+      <a href="internships.html" class="nav-item active">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        <span>Internships</span>
+        <span class="nav-badge badge-live">100 Live</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
 
 <div class="wrap">
-
-<!-- ══ NAV BAR ══ -->
-<nav class="nav-bar">
-  <a href="index.html" class="nav-item">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg>
-    <span>Roadmap</span>
-  </a>
-  <a href="notes.html" class="nav-item">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-    <span>Python Notes</span>
-  </a>
-  <a href="internships.html" class="nav-item active">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-    <span>Internships</span>
-    <span class="nav-badge">100 Live</span>
-  </a>
-</nav>
 
 <!-- ══ HERO ══ -->
 <header class="hero">
@@ -679,7 +782,7 @@ footer a:hover {
 <!-- ══ FOOTER ══ -->
 <footer>
   <div>
-    Made for students &bull; <a href="index.html">AI Learning Route</a> &bull; <a href="notes.html">Python Handbook</a>
+    Made for students &bull; <a href="index.html">AI Learning Route</a> &bull; <a href="notes.html">Python Handbook</a> &bull; <a href="pandas.html">Pandas Course</a>
   </div>
   <div>
     Data source: <code>internship_data.json</code>

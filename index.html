@@ -25,7 +25,7 @@ h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;margin:0
 header{padding:28px 0 12px}
 h1{font-size:2.1rem;font-weight:800}
 header p{color:var(--muted);margin:8px 0 0}
-.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--bg);padding:10px 0 12px}
+.bar{position:sticky;top:54px;z-index:11;background:var(--bg);padding:10px 0 12px}
 .bar-top{display:flex;justify-content:space-between;font-weight:600;font-size:.95rem}
 .track{height:10px;border-radius:99px;background:var(--tint);margin-top:6px;overflow:hidden}
 .fill{height:100%;width:0;background:linear-gradient(90deg,var(--p1),var(--p2),var(--p3));transition:width .35s}
@@ -61,57 +61,204 @@ td,th{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line)}
 button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:8px 12px;font:inherit;cursor:pointer}
 @media (prefers-reduced-motion:reduce){.fill{transition:none}}
 
-.nav-bar{display:flex;gap:8px;padding:20px 0 8px}
-.nav-item{display:inline-flex;align-items:center;gap:7px;padding:7px 15px;border-radius:99px;font-size:.9rem;font-weight:600;text-decoration:none;color:var(--muted);background:var(--surface);border:1px solid var(--line);transition:all .2s ease}
-.nav-item:hover{color:var(--ink);border-color:var(--muted)}
-.nav-item.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.nav-badge{background:var(--p2);color:#fff;font-size:.68rem;padding:2px 7px;border-radius:99px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
-.notes-banner{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--p2);border-left:5px solid var(--p2);border-radius:12px;padding:14px 16px;margin:12px 0 6px;text-decoration:none;color:inherit;transition:transform .18s,box-shadow .18s}
-.notes-banner:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(79,70,200,.14)}
-.nb-icon{font-size:1.9rem;line-height:1}
-.nb-body{flex:1;min-width:0}
-.nb-title{font-family:"Bricolage Grotesque",Figtree,sans-serif;font-weight:800;font-size:1.02rem;color:var(--p2);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.nb-tag{font-size:.68rem;background:var(--tint);color:var(--p2);padding:2px 7px;border-radius:99px;font-weight:700;text-transform:uppercase}
-.nb-desc{font-size:.88rem;color:var(--muted);margin-top:2px;line-height:1.4}
-.nb-arrow{font-family:"Bricolage Grotesque",Figtree,sans-serif;font-weight:800;font-size:.88rem;color:var(--p2);white-space:nowrap;padding:6px 14px;border-radius:8px;background:var(--tint);transition:all .2s}
-.notes-banner:hover .nb-arrow{background:var(--p2);color:#fff}
-.res-card{background:var(--tint);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-top:12px}
-.res-card-tag{font-family:"Bricolage Grotesque",Figtree,sans-serif;font-weight:800;font-size:.78rem;color:var(--p2);text-transform:uppercase;letter-spacing:.6px}
-.res-card-text{font-size:.9rem;color:var(--ink);margin:4px 0 9px}
-.res-card-link{display:inline-flex;align-items:center;gap:6px;font-size:.86rem;font-weight:700;text-decoration:none;color:#fff;background:var(--p2);padding:6px 14px;border-radius:8px;transition:opacity .18s}
-.res-card-link:hover{opacity:.9}
-@media(max-width:540px){.notes-banner{flex-wrap:wrap}.nb-arrow{width:100%;text-align:center}}
+/* ── UNIFIED SITE NAVBAR ── */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(238, 243, 248, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 2px 14px rgba(20,33,61,0.04);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .site-nav {
+    background: rgba(15, 23, 38, 0.88);
+    border-bottom-color: var(--line);
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+  }
+}
+.site-nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: "Bricolage Grotesque", Figtree, sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+}
+.brand-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, var(--p1), var(--p2));
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
+.brand-name { font-weight: 800; }
+.brand-sub {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted);
+  background: var(--tint);
+  padding: 2px 7px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: nowrap;
+}
+.nav-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  border-radius: 99px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  transition: all .18s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.nav-item:hover {
+  color: var(--ink);
+  border-color: var(--muted);
+  transform: translateY(-1px);
+}
+.nav-item.active {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.nav-badge {
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 99px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.badge-new { background: #f3872e; color: #fff; }
+.badge-live { background: var(--p1); color: #fff; }
 
-.intern-banner{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--p1);border-left:5px solid var(--p1);border-radius:12px;padding:14px 16px;margin:10px 0 6px;text-decoration:none;color:inherit;transition:transform .18s,box-shadow .18s}
-.intern-banner:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(11,143,128,.18)}
-.ib-icon{font-size:1.9rem;line-height:1}
-.ib-body{flex:1;min-width:0}
-.ib-title{font-family:"Bricolage Grotesque",Figtree,sans-serif;font-weight:800;font-size:1.02rem;color:var(--p1);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.ib-tag{font-size:.68rem;background:rgba(11,143,128,.12);color:var(--p1);padding:2px 7px;border-radius:99px;font-weight:700;text-transform:uppercase}
-.ib-desc{font-size:.88rem;color:var(--muted);margin-top:2px;line-height:1.4}
-.ib-arrow{font-family:"Bricolage Grotesque",Figtree,sans-serif;font-weight:800;font-size:.88rem;color:var(--p1);white-space:nowrap;padding:6px 14px;border-radius:8px;background:rgba(11,143,128,.12);transition:all .2s}
-.intern-banner:hover .ib-arrow{background:var(--p1);color:#fff}
-@media(max-width:540px){.intern-banner{flex-wrap:wrap}.ib-arrow{width:100%;text-align:center}}
+@media (max-width: 768px) {
+  .site-nav-inner {
+    padding: 8px 14px;
+    gap: 10px;
+  }
+  .nav-links {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding: 2px 0;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .brand-sub { display: none; }
+}
+@media (max-width: 580px) {
+  .site-nav-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .nav-brand {
+    align-self: flex-start;
+  }
+}
+
+/* ── BANNERS ── */
+.banners-stack{display:flex;flex-direction:column;gap:10px;margin:12px 0 10px}
+.banner-card{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-left:5px solid;border-radius:12px;padding:13px 16px;text-decoration:none;color:inherit;transition:transform .18s,box-shadow .18s}
+.banner-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+.bc-icon{font-size:1.85rem;line-height:1;flex-shrink:0}
+.bc-body{flex:1;min-width:0}
+.bc-title{font-family:"Bricolage Grotesque",Figtree,sans-serif;font-weight:800;font-size:1.02rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.bc-tag{font-size:.68rem;padding:2px 7px;border-radius:99px;font-weight:700;text-transform:uppercase}
+.bc-desc{font-size:.88rem;color:var(--muted);margin-top:2px;line-height:1.4}
+.bc-arrow{font-family:"Bricolage Grotesque",Figtree,sans-serif;font-weight:800;font-size:.86rem;white-space:nowrap;padding:6px 14px;border-radius:8px;transition:all .2s;flex-shrink:0}
+.banner-python{border-color:var(--p2);border-left-color:var(--p2)}
+.banner-python .bc-title{color:var(--p2)}
+.banner-python .bc-tag{background:var(--tint);color:var(--p2)}
+.banner-python .bc-arrow{background:var(--tint);color:var(--p2)}
+.banner-python:hover .bc-arrow{background:var(--p2);color:#fff}
+.banner-pandas{border-color:#f3872e;border-left-color:#f3872e}
+.banner-pandas .bc-title{color:#f3872e}
+.banner-pandas .bc-tag{background:rgba(243,135,46,.12);color:#f3872e}
+.banner-pandas .bc-arrow{background:rgba(243,135,46,.12);color:#f3872e}
+.banner-pandas:hover .bc-arrow{background:#f3872e;color:#fff}
+.banner-jobs{border-color:var(--p1);border-left-color:var(--p1)}
+.banner-jobs .bc-title{color:var(--p1)}
+.banner-jobs .bc-tag{background:rgba(11,143,128,.12);color:var(--p1)}
+.banner-jobs .bc-arrow{background:rgba(11,143,128,.12);color:var(--p1)}
+.banner-jobs:hover .bc-arrow{background:var(--p1);color:#fff}
+.res-card{background:var(--tint);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-top:12px}
+.res-card-tag{font-family:"Bricolage Grotesque",Figtree,sans-serif;font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.6px}
+.res-card-text{font-size:.9rem;color:var(--ink);margin:4px 0 9px}
+.res-card-link{display:inline-flex;align-items:center;gap:6px;font-size:.86rem;font-weight:700;text-decoration:none;color:#fff;padding:6px 14px;border-radius:8px;transition:opacity .18s}
+.res-card-link:hover{opacity:.9}
+@media(max-width:540px){.banner-card{flex-wrap:wrap}.bc-arrow{width:100%;text-align:center}}
 </style>
 </head>
 <body>
-<div class="wrap">
-<nav class="nav-bar">
-  <a href="index.html" class="nav-item active">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg>
-    <span>Roadmap</span>
-  </a>
-  <a href="notes.html" class="nav-item">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-    <span>Python Notes</span>
-    <span class="nav-badge">New</span>
-  </a>
-  <a href="internships.html" class="nav-item">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-    <span>Internships</span>
-    <span class="nav-badge" style="background:var(--p1)">100 Live</span>
-  </a>
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="brand-badge">⚡</div>
+      <span class="brand-name">AI Roadmap</span>
+      <span class="brand-sub">Sheryians Hub</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-item active">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg>
+        <span>Roadmap</span>
+      </a>
+      <a href="notes.html" class="nav-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span>Python Notes</span>
+      </a>
+      <a href="pandas.html" class="nav-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"></path><path d="M3 9h18"></path><path d="M3 15h18"></path><path d="M9 3v18"></path><path d="M15 3v18"></path></svg>
+        <span>Pandas Course</span>
+        <span class="nav-badge badge-new">New</span>
+      </a>
+      <a href="internships.html" class="nav-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        <span>Internships</span>
+        <span class="nav-badge badge-live">100 Live</span>
+      </a>
+    </div>
+  </div>
 </nav>
+
+<div class="wrap">
 <header>
   <h1>AI Learning Route</h1>
   <p>Senior ka roadmap, 10 stations mein. Station kholo, padho, phir uska gola tick karo.</p>
@@ -126,16 +273,34 @@ button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:
   <div class="tip"><b>Atak gaye to?</b>Pehle khud search karo. Jab saare raste band lage, tab senior ko batao.</div>
 </div>
 
-<a href="notes.html" class="notes-banner">
-  <div class="nb-icon">🐍</div>
-  <div class="nb-body">
-    <div class="nb-title">Python Complete Notes Handbook <span class="nb-tag">New Page</span></div>
-    <div class="nb-desc">Basics se lekar OOPs, Exception &amp; File Handling tak — 28 chapters interactive code examples ke saath.</div>
-  </div>
-  <span class="nb-arrow">Open Notes &rarr;</span>
-</a>
+<div class="banners-stack">
+  <a href="notes.html" class="banner-card banner-python">
+    <div class="bc-icon">🐍</div>
+    <div class="bc-body">
+      <div class="bc-title">Python Complete Notes Handbook <span class="bc-tag">28 Chapters</span></div>
+      <div class="bc-desc">Basics se lekar OOPs, Exception &amp; File Handling tak — structured reference code examples ke saath.</div>
+    </div>
+    <span class="bc-arrow">Open Handbook &rarr;</span>
+  </a>
 
-<ol id="route">
+  <a href="pandas.html" class="banner-card banner-pandas">
+    <div class="bc-icon">🐼</div>
+    <div class="bc-body">
+      <div class="bc-title">Pandas: The Complete Course <span class="bc-tag" style="background:rgba(243,135,46,.15);color:#f3872e">Interactive New</span></div>
+      <div class="bc-desc">7 core sections, live DataFrame inspector, clean data pipelines, and 20+ real practice questions.</div>
+    </div>
+    <span class="bc-arrow">Start Course &rarr;</span>
+  </a>
+
+  <a href="internships.html" class="banner-card banner-jobs">
+    <div class="bc-icon">💼</div>
+    <div class="bc-body">
+      <div class="bc-title">Tech &amp; AI Internships Board <span class="bc-tag">100 Verified Roles</span></div>
+      <div class="bc-desc">Full Stack, AI/ML, Data Science &amp; Web Internships for 2027 &amp; 2028 batch students with workable direct apply links.</div>
+    </div>
+    <span class="bc-arrow">Browse Internships &rarr;</span>
+  </a>
+</div><ol id="route">
   <li class="phase" style="--c:var(--p1)">Phase 1: AI ki basics<small>Yahan sabse zyada time do</small></li>
 
   <li class="stop" data-id="llm"><button class="dot" aria-pressed="false" aria-label="Mark LLM done"></button>
@@ -216,6 +381,11 @@ button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:
     <div class="body">
       <p><span class="k">Samjho:</span> EDA (Exploratory Data Analysis) mein data ko pehle dekhte hain: kitni rows, kaun si values missing, kya ajeeb hai. Imputation matlab missing values ko sahi values se bharna (jaise average se).</p>
       <p><span class="k">Kitna padhna:</span> Ek chhota dataset lo aur Pandas se khud karke dekho.</p>
+      <div class="res-card" style="border-left: 4px solid #f3872e;">
+        <div class="res-card-tag" style="color: #f3872e;">Dedicated Interactive Course</div>
+        <div class="res-card-text">EDA, missing values handling, feature engineering aur grouping Pandas course mein live practice karein:</div>
+        <a href="pandas.html" class="res-card-link" style="background: #f3872e;">🐼 Open Pandas Complete Course &rarr;</a>
+      </div>
       <div class="chk"><b>Khud check karo:</b> Data mein 100 values missing hon to tum kya karoge?</div>
     </div></details></li>
 
