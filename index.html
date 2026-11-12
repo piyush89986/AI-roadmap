@@ -28,7 +28,7 @@ header p{color:var(--muted);margin:8px 0 0}
 .bar{position:sticky;top:54px;z-index:11;background:var(--bg);padding:10px 0 12px}
 .bar-top{display:flex;justify-content:space-between;font-weight:600;font-size:.95rem}
 .track{height:10px;border-radius:99px;background:var(--tint);margin-top:6px;overflow:hidden}
-.fill{height:100%;width:0;background:linear-gradient(90deg,var(--p1),var(--p2),var(--p3));transition:width .35s}
+.fill{height:100%;width:0;background:linear-gradient(90deg,var(--p1),var(--p2),#0284C7,var(--p3),#9333EA,#E11D48);transition:width .35s}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
 .tips{display:grid;gap:10px;margin:8px 0 6px}
 .tip{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.95rem}
@@ -38,7 +38,7 @@ ol::before{content:"";position:absolute;left:15px;top:6px;bottom:6px;width:4px;b
 .phase{margin:26px 0 12px 44px;font-family:"Bricolage Grotesque",Figtree,sans-serif;font-size:1.25rem;font-weight:800;color:var(--c)}
 .phase small{display:block;font:400 .9rem Figtree,sans-serif;color:var(--muted)}
 .stop{position:relative;margin:0 0 12px;padding-left:44px;--c:var(--p1)}
-.p2{--c:var(--p2)}.p3{--c:var(--p3)}
+.p1{--c:var(--p1)}.p2{--c:var(--p2)}.p3{--c:#0284C7}.p4{--c:var(--p3)}.p5{--c:#9333EA}.p6{--c:#E11D48}
 .dot{position:absolute;left:4px;top:14px;width:26px;height:26px;border-radius:50%;border:4px solid var(--c);background:var(--bg);cursor:pointer;padding:0;display:grid;place-items:center;color:#fff;font-size:14px;line-height:1}
 .dot[aria-pressed="true"]{background:var(--c)}
 .dot[aria-pressed="true"]::after{content:"\2713";font-weight:800}
@@ -261,16 +261,16 @@ button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:
 <div class="wrap">
 <header>
   <h1>AI Learning Route</h1>
-  <p>Senior ka roadmap, 10 stations mein. Station kholo, padho, phir uska gola tick karo.</p>
+  <p>Complete AI &amp; Machine Learning Roadmap &bull; 17 stations mein. Station kholo, padho, phir uska gola tick karo.</p>
 </header>
 <div class="bar">
-  <div class="bar-top"><span id="count">0 / 10 complete</span><span id="pct">0%</span></div>
+  <div class="bar-top"><span id="count">0 / 17 complete</span><span id="pct">0%</span></div>
   <div class="track"><div class="fill" id="fill"></div></div>
 </div>
 
 <div class="tips">
-  <div class="tip"><b>Practice kaise karein</b>OpenAI ya Gemini ki API keys use karo. Student ID card se free mil jati hain.</div>
-  <div class="tip"><b>Atak gaye to?</b>Pehle khud search karo. Jab saare raste band lage, tab senior ko batao.</div>
+  <div class="tip"><b>Practice kaise karein</b>Google Colab aur Kaggle datasets use karo. Free GPU compute aur free Gemini/OpenAI API keys mil jati hain.</div>
+  <div class="tip"><b>Atak gaye to?</b>Pehle official docs aur code search karo. Jab saare raste band lagein, tab senior ya community se discuss karo.</div>
 </div>
 
 <div class="banners-stack">
@@ -301,111 +301,216 @@ button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:
     <span class="bc-arrow">Browse Internships &rarr;</span>
   </a>
 </div><ol id="route">
-  <li class="phase" style="--c:var(--p1)">Phase 1: AI ki basics<small>Yahan sabse zyada time do</small></li>
+  <!-- ════ PHASE 1: FOUNDATIONS & PYTHON DATA STACK ════ -->
+  <li class="phase" style="--c:var(--p1)">Phase 1: Foundations &amp; Python Data Stack<small>Programming, data wrangling aur numerical computing</small></li>
 
-  <li class="stop" data-id="llm"><button class="dot" aria-pressed="false" aria-label="Mark LLM done"></button>
-    <details><summary><h3>LLM kya hota hai</h3><span class="meta">Time: 1 din &nbsp;|&nbsp; Depth: concept</span></summary>
+  <!-- 1. Python Basics & Core -->
+  <li class="stop p1" data-id="py"><button class="dot" aria-pressed="false" aria-label="Mark Python done"></button>
+    <details open><summary><h3>1. Python Basics &amp; Core</h3><span class="meta">Time: 4 se 5 din &nbsp;|&nbsp; Depth: strong fundamentals</span></summary>
     <div class="body">
-      <p><span class="k">Samjho:</span> LLM (Large Language Model) ek bada AI model hai. Wo bahut saara text padh kar seekhta hai aur batata hai ki agla word kya aana chahiye. ChatGPT aur Gemini isi type ke hain.</p>
-      <p><span class="k">Kitna padhna:</span> Bas itna ki wo kya karta hai aur kya nahi kar sakta. Training ki detail nahi.</p>
-      <div class="chk"><b>Khud check karo:</b> Apne dost ko 2 line mein samjha sakte ho ki LLM jawab kaise banata hai?</div>
-    </div></details></li>
-
-  <li class="stop" data-id="tok"><button class="dot" aria-pressed="false" aria-label="Mark Tokenization done"></button>
-    <details><summary><h3>Tokenization aur Architecture</h3><span class="meta">Time: 1 din &nbsp;|&nbsp; Depth: overview</span></summary>
-    <div class="body">
-      <p><span class="k">Samjho:</span> Model text ko seedha nahi padhta. Pehle text ko chhote tukdon (tokens) mein todta hai, phir unko numbers banata hai. Architecture ka matlab hai model andar se kaise bana hai. Aaj ke LLM Transformer par chalte hain, jiska main idea “attention” hai: kaun sa word kis word se juda hai.</p>
-      <p><span class="k">Kitna padhna:</span> Diagram dekho aur flow samjho. Math ya formula mat ghuso.</p>
-      <div class="chk"><b>Khud check karo:</b> Token kya hota hai? Ek word aur ek token same kyun nahi hote?</div>
-    </div></details></li>
-
-  <li class="stop" data-id="gen"><button class="dot" aria-pressed="false" aria-label="Mark GenAI and Agentic AI done"></button>
-    <details><summary><h3>GenAI aur Agentic AI</h3><span class="meta">Time: aadha din &nbsp;|&nbsp; Depth: sirf overview</span></summary>
-    <div class="body">
-      <p><span class="k">Samjho:</span> GenAI naya content banata hai (text, image, code). Agentic AI aage jata hai: wo khud plan banata hai, tools use karta hai aur kaam poora karta hai.</p>
-      <p><span class="k">Kitna padhna:</span> Bas ye dekho ki dono kaam kaise karte hain. Senior ne “overall” bola hai.</p>
-      <div class="chk"><b>Khud check karo:</b> Chatbot aur AI agent mein kya farak hai?</div>
-    </div></details></li>
-
-  <li class="stop" data-id="rag"><button class="dot" aria-pressed="false" aria-label="Mark RAG done"></button>
-    <details><summary><h3>RAG (Retrieval Augmented Generation)</h3><span class="meta">Time: 2 se 3 din &nbsp;|&nbsp; Depth: achhi tarah samjho</span></summary>
-    <div class="body">
-      <p><span class="k">Samjho:</span> LLM ko tumhare apne data ki jaankari nahi hoti. RAG mein pehle tumhare data mein se kaam ka hissa dhoondha jata hai (Retriever), phir wo hissa LLM ko diya jata hai jo jawab likhta hai (Generator).</p>
-      <p><span class="k">Kitna padhna:</span> Poora flow: sawal, search, context, jawab. Ye topic zaroori hai, isliye ise jaldi mat nikalo.</p>
-      <div class="chk"><b>Khud check karo:</b> Agar company ki PDF par chatbot banana ho to RAG mein kaun sa step kya karega?</div>
-    </div></details></li>
-
-  <li class="stop" data-id="mcp"><button class="dot" aria-pressed="false" aria-label="Mark MCP done"></button>
-    <details><summary><h3>MCP</h3><span class="meta">Time: 1 se 2 din &nbsp;|&nbsp; Depth: concept + overview</span></summary>
-    <div class="body">
-      <p><span class="k">Samjho:</span> MCP (Model Context Protocol) AI ko bahari tools aur apps se jodne ka ek standard tareeka hai. Jaise USB: ek hi connector, kai devices.</p>
-      <p><span class="k">Kitna padhna:</span> Ye samjho ki MCP kyun bana aur AI usse kya kar pata hai.</p>
-      <div class="chk"><b>Khud check karo:</b> AI agent ko calendar ya database tak kaise pahunchaya ja sakta hai?</div>
-    </div></details></li>
-
-  <li class="phase" style="--c:var(--p2)">Phase 2: Tools<small>Code aur data ka kaam</small></li>
-
-  <li class="stop p2" data-id="py"><button class="dot" aria-pressed="false" aria-label="Mark Python done"></button>
-    <details><summary><h3>Python basics</h3><span class="meta">Time: 4 se 5 din &nbsp;|&nbsp; Depth: basics, OOPs nahi</span></summary>
-    <div class="body">
-      <p><span class="k">Padho:</span> variables, if/else, loops, functions, list aur dictionary, file padhna.</p>
-      <p><span class="k">Python hi kyun?</span> AI aur data ki libraries Python mein sabse achhi hain. Example: ek PDF ke data mein duplicate records hatane hain. Python (Pandas) mein ye kuch lines ka kaam hai, JS web pages ke liye zyada hota hai.</p>
+      <p><span class="k">Samjho:</span> AI aur Data Science ki foundation Python hai. Variables, Data Types (lists, dicts, sets, tuples), Conditionals (if/else), Loops (for/while), Functions, List Comprehensions, aur File Handling (JSON/CSV) bilkul clear hone chahiye. OOPs ke basics (Classes &amp; Objects) ka idea zaroor lo.</p>
+      <p><span class="k">Python hi kyun?</span> AI, ML aur Data ki saari modern libraries (NumPy, Pandas, PyTorch, Scikit-learn) Python-first hain.</p>
       <div class="res-card">
         <div class="res-card-tag">Dedicated Handbook</div>
         <div class="res-card-text">Python ke syntax, detailed notes aur examples ke liye Sheryians handbook page dekhein:</div>
-        <a href="notes.html" class="res-card-link">📖 Open Python Notes Handbook &rarr;</a>
+        <a href="notes.html" class="res-card-link">📖 Open Python Notes Handbook (28 Chapters) &rarr;</a>
       </div>
-      <div class="chk"><b>Khud check karo:</b> Ek list se duplicate values hata sako?</div>
+      <div class="chk"><b>Khud check karo:</b> Ek custom function likh kar JSON/CSV file se data read karke clean kar sakte ho?</div>
     </div></details></li>
 
-  <li class="stop p2" data-id="sql"><button class="dot" aria-pressed="false" aria-label="Mark SQL done"></button>
-    <details><summary><h3>SQL</h3><span class="meta">Time: 2 se 3 din &nbsp;|&nbsp; Depth: basics</span></summary>
+  <!-- 2. Pandas -->
+  <li class="stop p1" data-id="pandas"><button class="dot" aria-pressed="false" aria-label="Mark Pandas done"></button>
+    <details><summary><h3>2. Pandas (Data Manipulation &amp; Analysis)</h3><span class="meta">Time: 3 se 4 din &nbsp;|&nbsp; Depth: practical mastery</span></summary>
     <div class="body">
-      <p><span class="k">Padho:</span> SELECT, WHERE, ORDER BY, GROUP BY, JOIN. Tum web apps bana chuke ho, to ye jaldi hoga.</p>
-      <div class="chk"><b>Khud check karo:</b> Do tables ko JOIN karke ek result nikal sakte ho?</div>
-    </div></details></li>
-
-  <li class="stop p2" data-id="vec"><button class="dot" aria-pressed="false" aria-label="Mark Embeddings and Vector DB done"></button>
-    <details><summary><h3>Embeddings aur Vector DB</h3><span class="meta">Time: 3 se 4 din &nbsp;|&nbsp; Depth: achhi tarah</span></summary>
-    <div class="body">
-      <div class="warn"><b>Ruko:</b> Ye tabhi shuru karo jab LLM, RAG aur MCP ke stations tick ho chuke hon.</div>
-      <p><span class="k">Samjho:</span> Embedding text ko numbers ki list (vector) bana deti hai. Milte-julte matlab wale text ke vectors paas-paas hote hain. Vector DB in vectors ko store karke tezi se search karta hai. RAG ka “Retriever” isi par chalta hai.</p>
-      <p><span class="k">Saath mein dekho:</span> multi-agents (kai AI agents) aapas mein kaise jude hote hain.</p>
-      <div class="chk"><b>Khud check karo:</b> “car” aur “automobile” ke vectors paas kyun honge?</div>
-    </div></details></li>
-
-  <li class="phase" style="--c:var(--p3)">Phase 3: ML basics<small>Sirf utna jitna bataya gaya</small></li>
-
-  <li class="stop p3" data-id="eda"><button class="dot" aria-pressed="false" aria-label="Mark EDA and Imputation done"></button>
-    <details><summary><h3>EDA aur Imputation</h3><span class="meta">Time: 2 se 3 din &nbsp;|&nbsp; Depth: practical</span></summary>
-    <div class="body">
-      <p><span class="k">Samjho:</span> EDA (Exploratory Data Analysis) mein data ko pehle dekhte hain: kitni rows, kaun si values missing, kya ajeeb hai. Imputation matlab missing values ko sahi values se bharna (jaise average se).</p>
-      <p><span class="k">Kitna padhna:</span> Ek chhota dataset lo aur Pandas se khud karke dekho.</p>
+      <p><span class="k">Samjho:</span> Tabular data (rows &amp; columns) ke liye Pandas industry standard hai. DataFrames aur Series ko load karna (<span class="mono">read_csv</span>), indexing &amp; selection (<span class="mono">loc</span> vs <span class="mono">iloc</span>), boolean filtering, missing values handle karna (<span class="mono">fillna</span>, <span class="mono">dropna</span>), feature creation (<span class="mono">apply</span>, <span class="mono">map</span>), aur grouping (<span class="mono">groupby().agg()</span>) daily use hota hai.</p>
       <div class="res-card" style="border-left: 4px solid #f3872e;">
-        <div class="res-card-tag" style="color: #f3872e;">Dedicated Interactive Course</div>
-        <div class="res-card-text">EDA, missing values handling, feature engineering aur grouping Pandas course mein live practice karein:</div>
-        <a href="pandas.html" class="res-card-link" style="background: #f3872e;">🐼 Open Pandas Complete Course &rarr;</a>
+        <div class="res-card-tag" style="color: #f3872e;">Interactive Course</div>
+        <div class="res-card-text">Data cleaning, filtering, grouping aur real case study hamare dedicated interactive Pandas course mein live karein:</div>
+        <a href="pandas.html" class="res-card-link" style="background: #f3872e;">🐼 Open Pandas Complete Course (7 Sections + Quizzes) &rarr;</a>
       </div>
-      <div class="chk"><b>Khud check karo:</b> Data mein 100 values missing hon to tum kya karoge?</div>
+      <div class="chk"><b>Khud check karo:</b> Ek CSV load karke department-wise average salary aur employee count ek line mein nikal sakte ho?</div>
     </div></details></li>
 
-  <li class="stop p3" data-id="sk"><button class="dot" aria-pressed="false" aria-label="Mark Scikit-learn done"></button>
-    <details><summary><h3>Scikit-learn aur algorithms</h3><span class="meta">Time: 4 se 5 din &nbsp;|&nbsp; Depth: use karna seekho</span></summary>
+  <!-- 3. NumPy -->
+  <li class="stop p1" data-id="numpy"><button class="dot" aria-pressed="false" aria-label="Mark NumPy done"></button>
+    <details><summary><h3>3. NumPy (Numerical Computing &amp; Arrays)</h3><span class="meta">Time: 2 din &nbsp;|&nbsp; Depth: essential concepts</span></summary>
     <div class="body">
-      <p><span class="k">Samjho:</span> Scikit-learn (spelling dhyan se: S-c-i-k-i-t learn) Python ki library hai jisme ML algorithms ready milte hain. Tumhe unko use karna aana chahiye.</p>
-      <p><span class="k">Data kitna bada?</span></p>
+      <p><span class="k">Samjho:</span> NumPy Python mein fast matrix math aur multi-dimensional arrays (<span class="mono">ndarray</span>) provide karta hai. Vectorized operations, broadcasting rules, array slicing, dot products aur linear algebra basics samjho. AI models aur embeddings internally numerical tensors/arrays hi hote hain.</p>
+      <p><span class="k">Kitna padhna:</span> Array creation (<span class="mono">np.array</span>, <span class="mono">np.zeros</span>, <span class="mono">np.arange</span>), indexing, reshaping, vectorization. Deep mathematical derivations nahi karni.</p>
+      <div class="chk"><b>Khud check karo:</b> 2D array ka mean aur sum specific axis (axis=0 / axis=1) par calculate kar sakte ho?</div>
+    </div></details></li>
+
+  <!-- 4. Kaggle -->
+  <li class="stop p1" data-id="kaggle"><button class="dot" aria-pressed="false" aria-label="Mark Kaggle Practice done"></button>
+    <details><summary><h3>4. Kaggle (Hands-on Practice &amp; Datasets)</h3><span class="meta">Time: 2 se 3 din &nbsp;|&nbsp; Depth: practical exploration</span></summary>
+    <div class="body">
+      <p><span class="k">Samjho:</span> Kaggle data science ki sabse badi hands-on community hai. Yahan theoretical code chhod kar real-world datasets par kaam seekha jata hai. Top data scientists ke public Jupyter Notebooks read karke coding style aur techniques seekho.</p>
+      <p><span class="k">Kaise shuru karein:</span> Free Kaggle account banao, free GPU/TPU kernels use karo, aur classic beginner datasets (jaise Titanic Survival ya House Prices) par apna pehla notebook run karo.</p>
+      <div class="chk"><b>Khud check karo:</b> Kaggle se ek raw dataset utha kar Google Colab ya Kaggle Kernel mein load karke initial summary dekhi?</div>
+    </div></details></li>
+
+  <!-- ════ PHASE 2: MACHINE LEARNING & ALGORITHMS ════ -->
+  <li class="phase" style="--c:var(--p2)">Phase 2: Machine Learning &amp; Algorithms<small>Data cleaning, exploration aur predictive models</small></li>
+
+  <!-- 5. EDA -->
+  <li class="stop p2" data-id="eda"><button class="dot" aria-pressed="false" aria-label="Mark EDA done"></button>
+    <details><summary><h3>5. EDA (Exploratory Data Analysis) &amp; Preprocessing</h3><span class="meta">Time: 3 din &nbsp;|&nbsp; Depth: practical &amp; critical</span></summary>
+    <div class="body">
+      <p><span class="k">Samjho:</span> Real data mess hota hai. EDA mein data ki distributions, skewness, missing values (Imputation: mean/median/mode), outliers, aur correlation identify kiye jaate hain. Categorical text ko numbers mein convert karne ke liye One-Hot Encoding aur Label Encoding samjho.</p>
+      <p><span class="k">Visualization:</span> Matplotlib aur Seaborn se correlation heatmaps, box plots, aur histograms plot karna seekho.</p>
+      <div class="chk"><b>Khud check karo:</b> Agar dataset mein salary column mein outliers hon, to missing value fill karne ke liye mean use karoge ya median? Kyun?</div>
+    </div></details></li>
+
+  <!-- 6. Scikit-Learn Algorithms -->
+  <li class="stop p2" data-id="ml-algo"><button class="dot" aria-pressed="false" aria-label="Mark Scikit-Learn Algorithms done"></button>
+    <details><summary><h3>6. Scikit-Learn &amp; Core Algorithms (Linear, Decision Tree, Random Forest)</h3><span class="meta">Time: 4 se 5 din &nbsp;|&nbsp; Depth: implementation &amp; evaluation</span></summary>
+    <div class="body">
+      <p><span class="k">Samjho:</span> Scikit-Learn (<span class="mono">sklearn</span>) Python ki primary machine learning library hai. Tumhe 3 core algorithms achhi tarah use karne aane chahiye:</p>
       <table>
-        <tr><th>Data size</th><th>Kya use karein</th></tr>
-        <tr><td>Lagbhag 10 lakh rows tak</td><td>Pandas</td></tr>
-        <tr><td>Usse zyada</td><td>PySpark (koi limit nahi)</td></tr>
-        <tr><td>Cloud par</td><td>Azure ya Databricks</td></tr>
+        <tr><th>Algorithm</th><th>Kaam</th><th>Use Case</th></tr>
+        <tr><td><b>Linear Regression</b></td><td>Continuous number predict karna</td><td>Ghar ki price, salary prediction</td></tr>
+        <tr><td><b>Decision Tree</b></td><td>If-else rules ka tree banana</td><td>Customer churn, loan approval</td></tr>
+        <tr><td><b>Random Forest</b></td><td>Multiple trees ka ensemble (voting)</td><td>High accuracy classification &amp; regression</td></tr>
       </table>
-      <p>Cloud ka bas naam aur idea pata ho, abhi deep nahi jana.</p>
-      <div class="chk"><b>Khud check karo:</b> Ek dataset par ek simple model train karke result dekh sakte ho?</div>
+      <p><span class="k">Core Workflow:</span> <span class="mono">train_test_split</span> &rarr; <span class="mono">model.fit(X_train, y_train)</span> &rarr; <span class="mono">model.predict(X_test)</span> &rarr; Metrics (MAE, R2, Accuracy, Confusion Matrix).</p>
+      <div class="chk"><b>Khud check karo:</b> Ek dataset par Linear Regression aur Random Forest train karke dono ke evaluation metrics compare kar sakte ho?</div>
+    </div></details></li>
+
+  <!-- ════ PHASE 3: CONTAINERIZATION, CLOUD & DEPLOYMENT ════ -->
+  <li class="phase" style="--c:#0284C7">Phase 3: Containerization, Cloud &amp; Deployment<small>Notebook se nikaal kar production environment mein le jana</small></li>
+
+  <!-- 7. Docker -->
+  <li class="stop p3" data-id="docker"><button class="dot" aria-pressed="false" aria-label="Mark Docker done"></button>
+    <details><summary><h3>7. Docker Basic Understanding</h3><span class="meta">Time: 2 se 3 din &nbsp;|&nbsp; Depth: concepts + CLI essentials</span></summary>
+    <div class="body">
+      <p><span class="k">Samjho:</span> Docker tumhare code aur uski dependencies (Python version, libraries, system packages) ko ek lightweight container mein pack kar deta hai. "Mere laptop mein chal raha tha, server par nahi chal raha" wali problem Docker se solve hoti hai.</p>
+      <p><span class="k">Padho:</span> Container vs Virtual Machine, <span class="mono">Dockerfile</span> likhna (<span class="mono">FROM</span>, <span class="mono">WORKDIR</span>, <span class="mono">COPY</span>, <span class="mono">RUN</span>, <span class="mono">CMD</span>), image build karna (<span class="mono">docker build</span>), container run karna (<span class="mono">docker run</span>), aur port mapping (<span class="mono">-p 8000:8000</span>).</p>
+      <div class="chk"><b>Khud check karo:</b> Ek simple Python script ya API ke liye Dockerfile likh kar container run kar sakte ho?</div>
+    </div></details></li>
+
+  <!-- 8. Cloud Basics: AWS & Azure -->
+  <li class="stop p3" data-id="cloud"><button class="dot" aria-pressed="false" aria-label="Mark Cloud Basics done"></button>
+    <details><summary><h3>8. Cloud Basics (AWS &amp; Azure)</h3><span class="meta">Time: 2 se 3 din &nbsp;|&nbsp; Depth: core services &amp; architecture</span></summary>
+    <div class="body">
+      <p><span class="k">Samjho:</span> Modern AI applications cloud par deploy aur scale hoti hain. Dono primary cloud providers ke core building blocks samjho:</p>
+      <table>
+        <tr><th>Capability</th><th>AWS (Amazon Web Services)</th><th>Azure (Microsoft)</th></tr>
+        <tr><td>Object / File Storage</td><td><b>AWS S3</b> (datasets &amp; model weights)</td><td><b>Azure Blob Storage</b></td></tr>
+        <tr><td>Virtual Servers / Compute</td><td><b>AWS EC2</b> (virtual instances)</td><td><b>Azure Virtual Machines</b></td></tr>
+        <tr><td>Serverless Execution</td><td><b>AWS Lambda</b></td><td><b>Azure Functions</b></td></tr>
+        <tr><td>Managed AI Services</td><td><b>Amazon Bedrock / SageMaker</b></td><td><b>Azure OpenAI Service</b></td></tr>
+      </table>
+      <p><span class="k">Kitna padhna:</span> Console navigate karna, S3/Blob storage mein file upload/download, aur cloud architecture ka basic mental model.</p>
+      <div class="chk"><b>Khud check karo:</b> S3 bucket ya Azure Blob storage mein file upload aur access policy ka flow samjha sakte ho?</div>
+    </div></details></li>
+
+  <!-- 9. AI to Deploy Architecture -->
+  <li class="stop p3" data-id="deploy"><button class="dot" aria-pressed="false" aria-label="Mark AI Deployment done"></button>
+    <details><summary><h3>9. AI to Deploy Architecture</h3><span class="meta">Time: 3 se 4 din &nbsp;|&nbsp; Depth: end-to-end production flow</span></summary>
+    <div class="body">
+      <p><span class="k">Samjho:</span> Jupyter Notebook ka code production-grade API kaise banta hai? Complete deployment architecture ka flow samjho:</p>
+      <p><b>1. API Layer:</b> FastAPI ya Flask se REST endpoints create karna (<span class="mono">POST /predict</span>).</p>
+      <p><b>2. Containerization:</b> API + Model weights ko Docker image mein wrap karna.</p>
+      <p><b>3. Serving &amp; Scaling:</b> Cloud VM (EC2/Azure VM) ya Container Service par host karna, health checks, environment variables, aur CORS configure karna.</p>
+      <p><b>4. Flow:</b> Client App &rarr; API Gateway / FastAPI &rarr; Model Inference Engine &rarr; JSON Output.</p>
+      <div class="chk"><b>Khud check karo:</b> FastAPI mein trained model load karke POST request se input le kar prediction JSON return kar sakte ho?</div>
+    </div></details></li>
+
+  <!-- ════ PHASE 4: LLMS, TOKENIZATION & GENERATIVE AI ════ -->
+  <li class="phase" style="--c:var(--p3)">Phase 4: LLMs, Tokenization &amp; Generative AI<small>Modern generative models aur unke core building blocks</small></li>
+
+  <!-- 10. LLM Basic Knowledge -->
+  <li class="stop p4" data-id="llm"><button class="dot" aria-pressed="false" aria-label="Mark LLM Basics done"></button>
+    <details><summary><h3>10. LLM (Large Language Model) Fundamentals</h3><span class="meta">Time: 1 se 2 din &nbsp;|&nbsp; Depth: conceptual foundation</span></summary>
+    <div class="body">
+      <p><span class="k">Samjho:</span> LLM (jaise GPT-4, Gemini, Claude, LLaMA) internet-scale text data par trained deep neural networks hain. Inka primary objective agla most probable token predict karna hai. Samjho ki pre-training, instruction fine-tuning, aur in-context learning mein kya farak hota hai.</p>
+      <p><span class="k">Limitations:</span> Hallucination kya hoti hai, context window size ka matlab kya hai, aur knowledge cutoff date kyun hoti hai.</p>
+      <div class="chk"><b>Khud check karo:</b> Apne dost ko 2 line mein samjha sakte ho ki LLM jawab kaise construct karta hai?</div>
+    </div></details></li>
+
+  <!-- 11. Tokenization & Architecture -->
+  <li class="stop p4" data-id="token"><button class="dot" aria-pressed="false" aria-label="Mark Tokenization done"></button>
+    <details><summary><h3>11. Tokenization &amp; Transformer Architecture</h3><span class="meta">Time: 2 din &nbsp;|&nbsp; Depth: structural overview</span></summary>
+    <div class="body">
+      <p><span class="k">Samjho:</span> AI model text ko direct English ya Hindi mein nahi padhta. Pehle text ko sub-word pieces (Tokens) mein todta hai (BPE algorithm se), phir har token ko ek unique number aur vector diya jata hai.</p>
+      <p><span class="k">Transformer:</span> Aaj ke sabhi LLMs Transformer architecture par chalte hain. Iska core idea “Self-Attention” hai: sentence ka kaun sa word doosre words se kitna deeply connected hai (e.g. "Bank of the river" vs "State Bank").</p>
+      <div class="chk"><b>Khud check karo:</b> Token kya hota hai? 1 word aur 1 token exact same kyun nahi hote? Token count API pricing ko kaise affect karta hai?</div>
+    </div></details></li>
+
+  <!-- 12. Generative AI Basics -->
+  <li class="stop p4" data-id="genai"><button class="dot" aria-pressed="false" aria-label="Mark GenAI Basics done"></button>
+    <details><summary><h3>12. Generative AI Basics &amp; Prompt Engineering</h3><span class="meta">Time: 1 se 2 din &nbsp;|&nbsp; Depth: practical API usage</span></summary>
+    <div class="body">
+      <p><span class="k">Samjho:</span> GenAI text, code, image aur speech generate karta hai. Prompt Engineering ke core patterns seekho: Zero-shot, Few-shot prompting, Chain-of-Thought (step-by-step reasoning), system instructions, aur structured JSON output generation.</p>
+      <p><span class="k">Parameters:</span> Temperature (creativity vs determinism), Top-P, frequency penalty, aur max tokens ka role samjho.</p>
+      <div class="chk"><b>Khud check karo:</b> Gemini ya OpenAI API use karke Python se structured JSON response return karwa sakte ho?</div>
+    </div></details></li>
+
+  <!-- 13. Embeddings & Vector DB -->
+  <li class="stop p4" data-id="embed"><button class="dot" aria-pressed="false" aria-label="Mark Embeddings done"></button>
+    <details><summary><h3>13. Embeddings &amp; Vector Databases</h3><span class="meta">Time: 3 din &nbsp;|&nbsp; Depth: achhi tarah samjho</span></summary>
+    <div class="body">
+      <p><span class="k">Samjho:</span> Embedding text ko floating-point numbers ke dense vector (list of floats) mein convert karti hai jo uske semantic meaning ko capture karta hai. Similar meaning wale text ke vectors paas-paas hote hain (Cosine Similarity). Vector DB (ChromaDB, Pinecone, FAISS) in vectors ko fast indexing aur similarity search deta hai.</p>
+      <p><span class="k">Why Vector DB?</span> Traditional SQL database text ka exact keyword match karta hai, jabki Vector DB "meaning" match karta hai (e.g. "fever in kid" matches "pediatric temperature").</p>
+      <div class="chk"><b>Khud check karo:</b> "car" aur "automobile" ke vectors paas-paas kyun honge? Cosine similarity kaise measure hoti hai?</div>
+    </div></details></li>
+
+  <!-- ════ PHASE 5: ADVANCED AI SYSTEMS, RAG & AGENTS ════ -->
+  <li class="phase" style="--c:#9333EA">Phase 5: Advanced AI Systems, RAG &amp; Agents<small>Retrieval, protocols aur autonomous agentic systems</small></li>
+
+  <!-- 14. RAG Understanding -->
+  <li class="stop p5" data-id="rag"><button class="dot" aria-pressed="false" aria-label="Mark RAG done"></button>
+    <details><summary><h3>14. RAG (Retrieval-Augmented Generation)</h3><span class="meta">Time: 3 se 4 din &nbsp;|&nbsp; Depth: industry essential</span></summary>
+    <div class="body">
+      <p><span class="k">Samjho:</span> LLM ke paas tumhare private data ya custom PDFs ki knowledge nahi hoti. RAG mein pehle documents ko chunks mein split karke embeddings banti hain (Indexing). User query aane par matching context retrieve hota hai (Retriever), aur LLM us context ko padh kar accurate answer generate karta hai (Generator).</p>
+      <p><span class="k">Components:</span> Document Loaders &rarr; Text Splitter / Chunking &rarr; Embedding Model &rarr; Vector Store &rarr; Semantic Search &rarr; Augmented Prompt &rarr; LLM Answer.</p>
+      <div class="chk"><b>Khud check karo:</b> Agar company ki private policy PDF par chatbot banana ho, to RAG ka kaun sa step kya karega? Hallucinations kaise kam hoti hain?</div>
+    </div></details></li>
+
+  <!-- 15. MCP -->
+  <li class="stop p5" data-id="mcp"><button class="dot" aria-pressed="false" aria-label="Mark MCP done"></button>
+    <details><summary><h3>15. MCP (Model Context Protocol)</h3><span class="meta">Time: 1 se 2 din &nbsp;|&nbsp; Depth: modern AI standard</span></summary>
+    <div class="body">
+      <p><span class="k">Samjho:</span> MCP (Model Context Protocol) AI models ko external tools, databases, APIs aur file systems se jodne ka universal standard tareeka hai. Jaise USB port kisi bhi device ko laptop se jod deta hai, waise hi MCP AI models ko local/remote tools provide karta hai without writing separate custom integrations.</p>
+      <p><span class="k">Architecture:</span> MCP Host (Chat App / IDE) &harr; MCP Client &harr; MCP Server (Tools, Resources, Prompts).</p>
+      <div class="chk"><b>Khud check karo:</b> Ek AI agent ko calendar, database ya GitHub repository secure tareeqe se connect karne ke liye MCP kaise kaam karta hai?</div>
+    </div></details></li>
+
+  <!-- 16. LangChain & Agentic AI -->
+  <li class="stop p5" data-id="agents"><button class="dot" aria-pressed="false" aria-label="Mark LangChain and Agents done"></button>
+    <details><summary><h3>16. LangChain &amp; Agentic AI / Multi-Agent Systems</h3><span class="meta">Time: 4 se 5 din &nbsp;|&nbsp; Depth: autonomous workflows</span></summary>
+    <div class="body">
+      <p><span class="k">Samjho:</span> Chatbot sirf response deta hai, jabki **Agentic AI** autonomous decision making karta hai: wo user goal samajhta hai, plan banata hai, external tools (Calculator, Web Search, SQL DB) use karta hai, aur results evaluate karke self-correct karta hai.</p>
+      <p><span class="k">Frameworks:</span> LangChain aur LangGraph se custom Chains, Memory, Agents aur **Multi-Agent Systems** banaye jaate hain (jahan Coder agent, Researcher agent aur Reviewer agent team ki tarah aapas mein collaborate karte hain).</p>
+      <div class="chk"><b>Khud check karo:</b> AI Chatbot aur Autonomous AI Agent mein fundamental farak kya hai? ReAct (Reasoning + Acting) loop kaise work karta hai?</div>
+    </div></details></li>
+
+  <!-- ════ PHASE 6: BIG DATA SCALE (AT THE END IF TIME PERMITS) ════ -->
+  <li class="phase" style="--c:#E11D48">Phase 6: Big Data Scale (Optional &bull; End Mein)<small>Agar time mile to cluster distributed computing seekho</small></li>
+
+  <!-- 17. PySpark -->
+  <li class="stop p6" data-id="pyspark"><button class="dot" aria-pressed="false" aria-label="Mark PySpark done"></button>
+    <details><summary><h3>17. PySpark &amp; Distributed Big Data (At the end if had time)</h3><span class="meta">Time: 3 se 4 din (Optional) &nbsp;|&nbsp; Depth: distributed architecture</span></summary>
+    <div class="body">
+      <p><span class="k">Samjho:</span> Jab dataset itna vishal ho jaye (crores of rows / multi-Gigabytes / Terabytes) jo ek single laptop ki RAM mein fit na ho sake, tab Pandas out-of-memory crash ho jata hai. PySpark Apache Spark ka Python API hai jo distributed clusters par parallelly data process karta hai.</p>
+      <p><span class="k">Rule of Thumb:</span></p>
+      <table>
+        <tr><th>Data Size</th><th>Tool</th><th>Environment</th></tr>
+        <tr><td>10-20 lakh rows tak</td><td><b>Pandas</b></td><td>Single laptop / machine</td></tr>
+        <tr><td>Crores of rows / TBs</td><td><b>PySpark</b></td><td>Distributed Cluster / Databricks</td></tr>
+      </table>
+      <p><span class="k">Senior ki advice:</span> Isse bilkul end mein tabhi chhuo jab baki saare stations tick ho chuke hon. PySpark DataFrames, lazy evaluation, aur transformations vs actions ka basic idea kaafi hai.</p>
+      <div class="chk"><b>Khud check karo:</b> Single-node in-memory processing (Pandas) aur cluster distributed computing (PySpark) mein key architecture difference kya hai?</div>
     </div></details></li>
 </ol>
 
-<div class="end"><h2>Sab ho gaya?</h2><p style="margin:6px 0 0">Senior ke hisaab se ye flow kaafi hai. Isse complete karne ke baad wo resume banwane mein help karenge.</p></div>
+<div class="end" style="border-color:#9333EA">
+  <h2>Sab stations complete ho gaye? 🎉</h2>
+  <p style="margin:6px 0 0">Python, Data Stack, ML Algorithms, Cloud/Docker, aur GenAI/Agents poora karne ke baad tum ek high-impact AI/ML engineer ban chuke ho. Iske baad direct projects portfolio banao aur job/internship apply karo!</p>
+  <div style="margin-top:14px;">
+    <a href="internships.html" style="display:inline-flex;align-items:center;gap:6px;font-size:.9rem;font-weight:700;text-decoration:none;color:#fff;background:#0B8F80;padding:8px 18px;border-radius:8px;">💼 Browse 100+ Live Tech Internships &rarr;</a>
+  </div>
+</div>
 <button class="reset" id="reset">Progress reset karo</button>
 </div>
 
