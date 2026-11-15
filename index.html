@@ -209,6 +209,11 @@ button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:
 .banner-python .bc-tag{background:var(--tint);color:var(--p2)}
 .banner-python .bc-arrow{background:var(--tint);color:var(--p2)}
 .banner-python:hover .bc-arrow{background:var(--p2);color:#fff}
+.banner-numpy{border-color:#0284C7;border-left-color:#0284C7}
+.banner-numpy .bc-title{color:#0284C7}
+.banner-numpy .bc-tag{background:rgba(2,132,199,.12);color:#0284C7}
+.banner-numpy .bc-arrow{background:rgba(2,132,199,.12);color:#0284C7}
+.banner-numpy:hover .bc-arrow{background:#0284C7;color:#fff}
 .banner-pandas{border-color:#f3872e;border-left-color:#f3872e}
 .banner-pandas .bc-title{color:#f3872e}
 .banner-pandas .bc-tag{background:rgba(243,135,46,.12);color:#f3872e}
@@ -243,6 +248,11 @@ button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:
       <a href="notes.html" class="nav-item">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
         <span>Python Notes</span>
+      </a>
+      <a href="numpy.html" class="nav-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        <span>NumPy Course</span>
+        <span class="nav-badge" style="background:#0284C7;color:#fff;">18 Ch</span>
       </a>
       <a href="pandas.html" class="nav-item">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"></path><path d="M3 9h18"></path><path d="M3 15h18"></path><path d="M9 3v18"></path><path d="M15 3v18"></path></svg>
@@ -281,6 +291,15 @@ button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:
       <div class="bc-desc">Basics se lekar OOPs, Exception &amp; File Handling tak — structured reference code examples ke saath.</div>
     </div>
     <span class="bc-arrow">Open Handbook &rarr;</span>
+  </a>
+
+  <a href="numpy.html" class="banner-card banner-numpy">
+    <div class="bc-icon">🔢</div>
+    <div class="bc-body">
+      <div class="bc-title">NumPy: The Complete Course <span class="bc-tag">18 Chapters &bull; Visual</span></div>
+      <div class="bc-desc">From first principles to your first dataset: visual multidimensional arrays, vectorization, broadcasting &amp; capstone.</div>
+    </div>
+    <span class="bc-arrow">Start Course &rarr;</span>
   </a>
 
   <a href="pandas.html" class="banner-card banner-pandas">
@@ -337,6 +356,11 @@ button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:
     <div class="body">
       <p><span class="k">Samjho:</span> NumPy Python mein fast matrix math aur multi-dimensional arrays (<span class="mono">ndarray</span>) provide karta hai. Vectorized operations, broadcasting rules, array slicing, dot products aur linear algebra basics samjho. AI models aur embeddings internally numerical tensors/arrays hi hote hain.</p>
       <p><span class="k">Kitna padhna:</span> Array creation (<span class="mono">np.array</span>, <span class="mono">np.zeros</span>, <span class="mono">np.arange</span>), indexing, reshaping, vectorization. Deep mathematical derivations nahi karni.</p>
+      <div class="res-card" style="border-left: 4px solid #0284C7;">
+        <div class="res-card-tag" style="color: #0284C7;">Interactive Course</div>
+        <div class="res-card-text">Visual array operations, broadcasting rules, vectorization race aur 200-student capstone project hamare dedicated NumPy course mein seekhein:</div>
+        <a href="numpy.html" class="res-card-link" style="background: #0284C7;">🔢 Open NumPy Complete Course (18 Chapters + Capstone) &rarr;</a>
+      </div>
       <div class="chk"><b>Khud check karo:</b> 2D array ka mean aur sum specific axis (axis=0 / axis=1) par calculate kar sakte ho?</div>
     </div></details></li>
 

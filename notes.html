@@ -253,6 +253,7 @@
   <div class="mobile-nav-pills">
     <a href="index.html" class="mn-pill">🗺️ Roadmap</a>
     <a href="notes.html" class="mn-pill active">🐍 Python Notes</a>
+    <a href="numpy.html" class="mn-pill">🔢 NumPy <span class="mn-badge" style="background:#0284c7">New</span></a>
     <a href="pandas.html" class="mn-pill">🐼 Pandas <span class="mn-badge" style="background:#f3872e">New</span></a>
     <a href="internships.html" class="mn-pill">💼 Jobs <span class="mn-badge" style="background:#059669">100</span></a>
   </div>
@@ -279,6 +280,13 @@
         <span>Python Notes</span>
       </div>
     </a>
+    <a href="numpy.html" class="hub-item">
+      <div class="hub-item-left">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        <span>NumPy Course</span>
+      </div>
+      <span class="hub-badge" style="background:#0284c7">New</span>
+    </a>
     <a href="pandas.html" class="hub-item">
       <div class="hub-item-left">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"></path><path d="M3 9h18"></path><path d="M3 15h18"></path><path d="M9 3v18"></path><path d="M15 3v18"></path></svg>
@@ -294,13 +302,11 @@
       <span class="hub-badge" style="background:#059669">100 Live</span>
     </a>
   </div>
-    <h2>Sheryians Coding School</h2>
-    <p>Python Complete Notes</p>
-  </div>
   <div class="nav-label">Start Here</div>
   <a href="#cover">📘 Cover</a>
   <div class="nav-label">Introduction</div>
   <a href="#intro">🐍 What is Python?</a>
+  <a href="#ai-ecosystem-stack">⚡ AI &amp; ML Stack</a>
   <div class="nav-label">Chapters</div>
   <a href="#ch01">01 — Installation</a>
   <a href="#ch02">02 — Comments &amp; Variables</a>
@@ -460,6 +466,51 @@
           <h4 style="color:#0891B2;font-size:14px;font-weight:700;margin-bottom:6px;">Game Development</h4>
           <p style="font-size:13px;color:var(--text-muted);">Pygame lets you build 2D games with Python. It's a great way to practise programming while building something fun.</p>
         </div>
+      </div>
+
+      <!-- ── PYTHON AI & DATA ECOSYSTEM DIAGRAM ── -->
+      <div id="ai-ecosystem-stack" style="background:#0F172A;border:1px solid #334155;border-radius:16px;padding:24px;margin:24px 0 10px;box-shadow:0 8px 24px rgba(15,23,42,0.18);">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#f3872e,#0284c7);color:#fff;display:grid;place-items:center;font-size:15px;font-weight:800;">⚡</div>
+            <div>
+              <h3 style="color:#F8FAFC;font-size:16px;font-weight:800;margin:0;">The Python AI &amp; Machine Learning Stack</h3>
+              <p style="color:#94A3B8;font-size:12.5px;margin:2px 0 0;">How open-source packages connect foundational Python to modern AI</p>
+            </div>
+          </div>
+          <span style="font-size:11px;font-weight:700;color:#F3872E;background:rgba(243,135,46,0.15);border:1px solid rgba(243,135,46,0.3);padding:4px 10px;border-radius:99px;text-transform:uppercase;letter-spacing:.5px;">Architecture Map</span>
+        </div>
+
+        <div style="background:#0B0F19;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:12px;overflow:hidden;text-align:center;">
+          <img src="python-ecosystem.png" alt="Python to Open-Source Packages, Machine Learning, and Artificial Intelligence Stack Diagram" style="width:100%;max-width:100%;height:auto;display:block;margin:0 auto;border-radius:8px;">
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(130px, 1fr));gap:10px;margin-top:16px;">
+          <div style="background:#1E293B;border:1px solid #334155;border-radius:8px;padding:10px 12px;text-align:center;">
+            <div style="color:#38BDF8;font-weight:800;font-size:13px;font-family:monospace;">NumPy</div>
+            <div style="color:#94A3B8;font-size:11.5px;margin-top:2px;">Math &amp; Multi-D Arrays</div>
+          </div>
+          <div style="background:#1E293B;border:1px solid #334155;border-radius:8px;padding:10px 12px;text-align:center;">
+            <div style="color:#FB923C;font-weight:800;font-size:13px;font-family:monospace;">Pandas</div>
+            <div style="color:#94A3B8;font-size:11.5px;margin-top:2px;">Tabular Data &amp; Wrangling</div>
+          </div>
+          <div style="background:#1E293B;border:1px solid #334155;border-radius:8px;padding:10px 12px;text-align:center;">
+            <div style="color:#4ADE80;font-weight:800;font-size:13px;font-family:monospace;">Matplotlib</div>
+            <div style="color:#94A3B8;font-size:11.5px;margin-top:2px;">Visuals &amp; Plotting</div>
+          </div>
+          <div style="background:#1E293B;border:1px solid #334155;border-radius:8px;padding:10px 12px;text-align:center;">
+            <div style="color:#A78BFA;font-weight:800;font-size:13px;font-family:monospace;">Scikit-learn</div>
+            <div style="color:#94A3B8;font-size:11.5px;margin-top:2px;">Classic ML Algorithms</div>
+          </div>
+          <div style="background:#1E293B;border:1px solid #334155;border-radius:8px;padding:10px 12px;text-align:center;">
+            <div style="color:#F43F5E;font-weight:800;font-size:13px;font-family:monospace;">TF / PyTorch</div>
+            <div style="color:#94A3B8;font-size:11.5px;margin-top:2px;">Deep Learning &amp; Tensors</div>
+          </div>
+        </div>
+
+        <p style="font-size:12.5px;color:#94A3B8;margin:14px 0 0;line-height:1.5;text-align:center;">
+          💡 <em>Notice the hierarchy:</em> Learning Python is step 1. These open-source packages form the actual bridge into Machine Learning and Artificial Intelligence.
+        </p>
       </div>
     </div>
 
@@ -1514,6 +1565,10 @@ pairs  = <span class="code-fn">list</span>(<span class="code-fn">zip</span>(name
     <a href="index.html" style="display:inline-flex;align-items:center;gap:7px;background:white;color:var(--indigo);font-weight:700;padding:11px 22px;border-radius:99px;text-decoration:none;font-size:13.5px;box-shadow:0 4px 16px rgba(0,0,0,0.2);transition:all .2s ease;">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
       Roadmap
+    </a>
+    <a href="numpy.html" style="display:inline-flex;align-items:center;gap:7px;background:#0284c7;color:white;font-weight:700;padding:11px 22px;border-radius:99px;text-decoration:none;font-size:13.5px;box-shadow:0 4px 16px rgba(0,0,0,0.2);transition:all .2s ease;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+      NumPy Course &rarr;
     </a>
     <a href="pandas.html" style="display:inline-flex;align-items:center;gap:7px;background:#f3872e;color:white;font-weight:700;padding:11px 22px;border-radius:99px;text-decoration:none;font-size:13.5px;box-shadow:0 4px 16px rgba(0,0,0,0.2);transition:all .2s ease;">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"></path><path d="M3 9h18"></path><path d="M3 15h18"></path><path d="M9 3v18"></path><path d="M15 3v18"></path></svg>
