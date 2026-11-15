@@ -67,91 +67,97 @@ h1, h2, h3, h4 {
   padding: 0 20px 80px;
 }
 
-/* ── UNIFIED SITE NAVBAR ── */
+/* ── UNIFIED SITE NAVBAR (COMPACT & AUTO-HIDE) ── */
 .site-nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(238, 243, 248, 0.88);
+  background: rgba(238, 243, 248, 0.92);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
-  box-shadow: 0 2px 14px rgba(20,33,61,0.04);
+  box-shadow: 0 2px 10px rgba(20,33,61,0.04);
+  transition: transform .28s cubic-bezier(0.16, 1, 0.3, 1), background-color .2s ease;
+  will-change: transform;
+}
+.site-nav.nav-hidden {
+  transform: translateY(-105%);
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .site-nav {
-    background: rgba(15, 23, 38, 0.88);
+    background: rgba(15, 23, 38, 0.92);
     border-bottom-color: var(--line);
-    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
   }
 }
 .site-nav-inner {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 5px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
 }
 .nav-brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   text-decoration: none;
   color: var(--ink);
   font-family: "Bricolage Grotesque", Figtree, sans-serif;
   font-weight: 800;
-  font-size: 1.05rem;
+  font-size: 0.92rem;
   letter-spacing: -0.01em;
   flex-shrink: 0;
 }
 .brand-badge {
-  width: 32px;
-  height: 32px;
-  border-radius: 9px;
+  width: 25px;
+  height: 25px;
+  border-radius: 7px;
   background: linear-gradient(135deg, var(--p1), var(--p2));
   color: #fff;
   display: grid;
   place-items: center;
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 800;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
   flex-shrink: 0;
 }
 .brand-name { font-weight: 800; }
 .brand-sub {
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-weight: 700;
   color: var(--muted);
   background: var(--tint);
-  padding: 2px 7px;
-  border-radius: 6px;
-  letter-spacing: 0.5px;
+  padding: 1.5px 5px;
+  border-radius: 5px;
+  letter-spacing: 0.4px;
   text-transform: uppercase;
 }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 5px;
   flex-wrap: nowrap;
 }
 .nav-item {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 7px 13px;
+  gap: 5px;
+  padding: 4px 10px;
   border-radius: 99px;
-  font-size: 0.86rem;
+  font-size: 0.78rem;
   font-weight: 600;
   text-decoration: none;
   color: var(--muted);
   background: var(--surface);
   border: 1px solid var(--line);
-  transition: all .18s ease;
+  transition: all .16s ease;
   white-space: nowrap;
   flex-shrink: 0;
 }
+.nav-item svg { width: 13px; height: 13px; flex-shrink: 0; }
 .nav-item:hover {
   color: var(--ink);
   border-color: var(--muted);
@@ -161,14 +167,14 @@ h1, h2, h3, h4 {
   background: var(--ink);
   color: var(--bg);
   border-color: var(--ink);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.12);
 }
 .nav-badge {
-  font-size: 0.65rem;
-  padding: 2px 6px;
+  font-size: 0.58rem;
+  padding: 1.5px 5px;
   border-radius: 99px;
   font-weight: 800;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.3px;
   text-transform: uppercase;
   line-height: 1;
 }
@@ -177,27 +183,26 @@ h1, h2, h3, h4 {
 
 @media (max-width: 768px) {
   .site-nav-inner {
-    padding: 8px 14px;
-    gap: 10px;
+    padding: 5px 12px;
+    gap: 8px;
   }
   .nav-links {
     overflow-x: auto;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
-    padding: 2px 0;
+    padding: 1px 0;
+    gap: 4px;
   }
   .nav-links::-webkit-scrollbar { display: none; }
   .brand-sub { display: none; }
+  .nav-item { padding: 4px 8px; font-size: 0.74rem; }
 }
-@media (max-width: 580px) {
+@media (max-width: 520px) {
   .site-nav-inner {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
+    gap: 6px;
   }
-  .nav-brand {
-    align-self: flex-start;
-  }
+  .brand-name { font-size: 0.84rem; }
+  .brand-badge { width: 22px; height: 22px; font-size: 10px; }
 }
 
 /* ── HERO ── */
@@ -2662,6 +2667,27 @@ resetBtn.addEventListener('click', resetAllFilters);
 
 // Initial render
 renderCards();
+
+// Navbar auto-hide on scroll down, reveal on scroll up
+(function(){
+  var nav = document.querySelector('.site-nav');
+  if (!nav) return;
+  var lastScroll = 0;
+  window.addEventListener('scroll', function(){
+    var current = Math.max(0, window.pageYOffset || document.documentElement.scrollTop);
+    var diff = current - lastScroll;
+    if (current <= 15) {
+      nav.classList.remove('nav-hidden');
+    } else if (Math.abs(diff) > 6) {
+      if (diff > 0 && current > 50) {
+        nav.classList.add('nav-hidden');
+      } else if (diff < 0) {
+        nav.classList.remove('nav-hidden');
+      }
+      lastScroll = current;
+    }
+  }, { passive: true });
+})();
 </script>
 </body>
 </html>

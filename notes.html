@@ -210,14 +210,19 @@
   .hub-item-left { display: flex; align-items: center; gap: 8px; }
   .hub-badge { font-size: 10px; padding: 2px 6px; border-radius: 99px; font-weight: 800; color: #fff; text-transform: uppercase; }
 
-  /* ── MOBILE NAV UPGRADE ── */
+  /* ── MOBILE NAV UPGRADE (COMPACT & AUTO-HIDE) ── */
   .mobile-nav {
     display: none;
+    transition: transform .28s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+  }
+  .mobile-nav.nav-hidden {
+    transform: translateY(-105%);
   }
   @media(max-width:768px){
     .mobile-nav {
-      display: flex; flex-direction: column; gap: 8px; position: sticky; top: 0; z-index: 200;
-      background: var(--indigo); padding: 10px 14px; box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      display: flex; flex-direction: column; gap: 4px; position: sticky; top: 0; z-index: 200;
+      background: var(--indigo); padding: 6px 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.18);
     }
     .mobile-top-row { display: flex; align-items: center; justify-content: space-between; }
     .mobile-brand-link { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
@@ -1597,6 +1602,27 @@ pairs  = <span class="code-fn">list</span>(<span class="code-fn">zip</span>(name
     });
   }, { threshold: 0.25 });
   sections.forEach(s => io.observe(s));
+
+  // Mobile nav auto-hide on scroll down, reveal on scroll up
+  (function(){
+    var mnav = document.querySelector('.mobile-nav');
+    if (!mnav) return;
+    var lastScroll = 0;
+    window.addEventListener('scroll', function(){
+      var current = Math.max(0, window.pageYOffset || document.documentElement.scrollTop);
+      var diff = current - lastScroll;
+      if (current <= 15) {
+        mnav.classList.remove('nav-hidden');
+      } else if (Math.abs(diff) > 6) {
+        if (diff > 0 && current > 50) {
+          mnav.classList.add('nav-hidden');
+        } else if (diff < 0) {
+          mnav.classList.remove('nav-hidden');
+        }
+        lastScroll = current;
+      }
+    }, { passive: true });
+  })();
 </script>
 </body>
 </html>
