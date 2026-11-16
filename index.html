@@ -53,8 +53,9 @@ summary h3{font-size:1.1rem;font-weight:600}
 .body{padding:0 14px 14px;border-top:1px dashed var(--line)}
 .body p{margin:10px 0 0}
 .body .k{font-weight:600;color:var(--c)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:.88em;background:var(--tint);padding:1px 5px;border-radius:4px}
 .chk{background:var(--tint);border-radius:8px;padding:9px 12px;margin-top:12px;font-size:.95rem}
-.warn{background:var(--tint);border-radius:8px;padding:9px 12px;margin-top:10px;font-size:.92rem}
+.warn{background:var(--tint);border-left:4px solid #f3872e;border-radius:8px;padding:9px 12px;margin-top:10px;font-size:.92rem}
 table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.93rem}
 td,th{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line)}
 .end{margin:26px 0 0 44px;background:var(--surface);border:2px solid var(--p1);border-radius:12px;padding:14px 16px}
@@ -200,42 +201,11 @@ button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:
   .brand-badge { width: 22px; height: 22px; font-size: 10px; }
 }
 
-/* ── BANNERS ── */
-.banners-stack{display:flex;flex-direction:column;gap:10px;margin:12px 0 10px}
-.banner-card{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-left:5px solid;border-radius:12px;padding:13px 16px;text-decoration:none;color:inherit;transition:transform .18s,box-shadow .18s}
-.banner-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.08)}
-.bc-icon{font-size:1.85rem;line-height:1;flex-shrink:0}
-.bc-body{flex:1;min-width:0}
-.bc-title{font-family:"Bricolage Grotesque",Figtree,sans-serif;font-weight:800;font-size:1.02rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.bc-tag{font-size:.68rem;padding:2px 7px;border-radius:99px;font-weight:700;text-transform:uppercase}
-.bc-desc{font-size:.88rem;color:var(--muted);margin-top:2px;line-height:1.4}
-.bc-arrow{font-family:"Bricolage Grotesque",Figtree,sans-serif;font-weight:800;font-size:.86rem;white-space:nowrap;padding:6px 14px;border-radius:8px;transition:all .2s;flex-shrink:0}
-.banner-python{border-color:var(--p2);border-left-color:var(--p2)}
-.banner-python .bc-title{color:var(--p2)}
-.banner-python .bc-tag{background:var(--tint);color:var(--p2)}
-.banner-python .bc-arrow{background:var(--tint);color:var(--p2)}
-.banner-python:hover .bc-arrow{background:var(--p2);color:#fff}
-.banner-numpy{border-color:#0284C7;border-left-color:#0284C7}
-.banner-numpy .bc-title{color:#0284C7}
-.banner-numpy .bc-tag{background:rgba(2,132,199,.12);color:#0284C7}
-.banner-numpy .bc-arrow{background:rgba(2,132,199,.12);color:#0284C7}
-.banner-numpy:hover .bc-arrow{background:#0284C7;color:#fff}
-.banner-pandas{border-color:#f3872e;border-left-color:#f3872e}
-.banner-pandas .bc-title{color:#f3872e}
-.banner-pandas .bc-tag{background:rgba(243,135,46,.12);color:#f3872e}
-.banner-pandas .bc-arrow{background:rgba(243,135,46,.12);color:#f3872e}
-.banner-pandas:hover .bc-arrow{background:#f3872e;color:#fff}
-.banner-jobs{border-color:var(--p1);border-left-color:var(--p1)}
-.banner-jobs .bc-title{color:var(--p1)}
-.banner-jobs .bc-tag{background:rgba(11,143,128,.12);color:var(--p1)}
-.banner-jobs .bc-arrow{background:rgba(11,143,128,.12);color:var(--p1)}
-.banner-jobs:hover .bc-arrow{background:var(--p1);color:#fff}
 .res-card{background:var(--tint);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-top:12px}
 .res-card-tag{font-family:"Bricolage Grotesque",Figtree,sans-serif;font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.6px}
 .res-card-text{font-size:.9rem;color:var(--ink);margin:4px 0 9px}
 .res-card-link{display:inline-flex;align-items:center;gap:6px;font-size:.86rem;font-weight:700;text-decoration:none;color:#fff;padding:6px 14px;border-radius:8px;transition:opacity .18s}
 .res-card-link:hover{opacity:.9}
-@media(max-width:540px){.banner-card{flex-wrap:wrap}.bc-arrow{width:100%;text-align:center}}
 </style>
 </head>
 <body>
@@ -258,17 +228,10 @@ button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:
       <a href="numpy.html" class="nav-item">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
         <span>NumPy Course</span>
-        <span class="nav-badge" style="background:#0284C7;color:#fff;">18 Ch</span>
       </a>
       <a href="pandas.html" class="nav-item">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"></path><path d="M3 9h18"></path><path d="M3 15h18"></path><path d="M9 3v18"></path><path d="M15 3v18"></path></svg>
         <span>Pandas Course</span>
-        <span class="nav-badge badge-new">New</span>
-      </a>
-      <a href="internships.html" class="nav-item">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-        <span>Internships</span>
-        <span class="nav-badge badge-live">100 Live</span>
       </a>
     </div>
   </div>
@@ -288,44 +251,7 @@ button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:
   <div class="tip"><b>Practice kaise karein</b>Google Colab aur Kaggle datasets use karo. Free GPU compute aur free Gemini/OpenAI API keys mil jati hain.</div>
   <div class="tip"><b>Atak gaye to?</b>Pehle official docs aur code search karo. Jab saare raste band lagein, tab senior ya community se discuss karo.</div>
 </div>
-
-<div class="banners-stack">
-  <a href="notes.html" class="banner-card banner-python">
-    <div class="bc-icon">🐍</div>
-    <div class="bc-body">
-      <div class="bc-title">Python Complete Notes Handbook <span class="bc-tag">28 Chapters</span></div>
-      <div class="bc-desc">Basics se lekar OOPs, Exception &amp; File Handling tak — structured reference code examples ke saath.</div>
-    </div>
-    <span class="bc-arrow">Open Handbook &rarr;</span>
-  </a>
-
-  <a href="numpy.html" class="banner-card banner-numpy">
-    <div class="bc-icon">🔢</div>
-    <div class="bc-body">
-      <div class="bc-title">NumPy: The Complete Course <span class="bc-tag">18 Chapters &bull; Visual</span></div>
-      <div class="bc-desc">From first principles to your first dataset: visual multidimensional arrays, vectorization, broadcasting &amp; capstone.</div>
-    </div>
-    <span class="bc-arrow">Start Course &rarr;</span>
-  </a>
-
-  <a href="pandas.html" class="banner-card banner-pandas">
-    <div class="bc-icon">🐼</div>
-    <div class="bc-body">
-      <div class="bc-title">Pandas: The Complete Course <span class="bc-tag" style="background:rgba(243,135,46,.15);color:#f3872e">Interactive New</span></div>
-      <div class="bc-desc">7 core sections, live DataFrame inspector, clean data pipelines, and 20+ real practice questions.</div>
-    </div>
-    <span class="bc-arrow">Start Course &rarr;</span>
-  </a>
-
-  <a href="internships.html" class="banner-card banner-jobs">
-    <div class="bc-icon">💼</div>
-    <div class="bc-body">
-      <div class="bc-title">Tech &amp; AI Internships Board <span class="bc-tag">100 Verified Roles</span></div>
-      <div class="bc-desc">Full Stack, AI/ML, Data Science &amp; Web Internships for 2027 &amp; 2028 batch students with workable direct apply links.</div>
-    </div>
-    <span class="bc-arrow">Browse Internships &rarr;</span>
-  </a>
-</div><ol id="route">
+<ol id="route">
   <!-- ════ PHASE 1: FOUNDATIONS & PYTHON DATA STACK ════ -->
   <li class="phase" style="--c:var(--p1)">Phase 1: Foundations &amp; Python Data Stack<small>Programming, data wrangling aur numerical computing</small></li>
 
@@ -382,28 +308,61 @@ button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:
   <!-- ════ PHASE 2: MACHINE LEARNING & ALGORITHMS ════ -->
   <li class="phase" style="--c:var(--p2)">Phase 2: Machine Learning &amp; Algorithms<small>Data cleaning, exploration aur predictive models</small></li>
 
-  <!-- 5. EDA -->
-  <li class="stop p2" data-id="eda"><button class="dot" aria-pressed="false" aria-label="Mark EDA done"></button>
-    <details><summary><h3>5. EDA (Exploratory Data Analysis) &amp; Preprocessing</h3><span class="meta">Time: 3 din &nbsp;|&nbsp; Depth: practical &amp; critical</span></summary>
+  <!-- 5. EDA & Statistical Imputation -->
+  <li class="stop p2" data-id="eda"><button class="dot" aria-pressed="false" aria-label="Mark EDA and Imputation done"></button>
+    <details><summary><h3>5. EDA, Preprocessing &amp; Statistical Imputation</h3><span class="meta">Time: 3 se 4 din &nbsp;|&nbsp; Depth: practical &amp; critical</span></summary>
     <div class="body">
-      <p><span class="k">Samjho:</span> Real data mess hota hai. EDA mein data ki distributions, skewness, missing values (Imputation: mean/median/mode), outliers, aur correlation identify kiye jaate hain. Categorical text ko numbers mein convert karne ke liye One-Hot Encoding aur Label Encoding samjho.</p>
-      <p><span class="k">Visualization:</span> Matplotlib aur Seaborn se correlation heatmaps, box plots, aur histograms plot karna seekho.</p>
-      <div class="chk"><b>Khud check karo:</b> Agar dataset mein salary column mein outliers hon, to missing value fill karne ke liye mean use karoge ya median? Kyun?</div>
+      <p><span class="k">Samjho:</span> Real data mess hota hai. EDA (Exploratory Data Analysis) mein data distributions, skewness, outliers (IQR &amp; Z-score), aur correlation identify kiye jaate hain. Categorical features ke liye One-Hot Encoding aur Label/Ordinal Encoding samjho.</p>
+      <p><span class="k">Visualization:</span> Matplotlib aur Seaborn se correlation heatmaps, box plots, violin plots, aur histograms plot karna seekho.</p>
+
+      <p style="margin-top:14px;"><span class="k">Statistical Imputation (Missing Data Handling):</span></p>
+      <p>Missing rows ko delete karna (<span class="mono">dropna</span>) valuable data loss karta hai. Statistical imputation mein missing values ko mathematical/statistical properties se fill kiya jata hai:</p>
+      <table>
+        <tr><th>Imputation Technique</th><th>Statistical Logic</th><th>Kab Use Karein?</th><th>Scikit-Learn Implementation</th></tr>
+        <tr><td><b>Mean Imputation</b></td><td>Column ka arithmetic average calculate karke fill karna</td><td>Symmetric / Normal distribution data mein (jahan extreme outliers na hon)</td><td><span class="mono">SimpleImputer(strategy='mean')</span></td></tr>
+        <tr><td><b>Median Imputation</b></td><td>Sorted data ka 50th percentile (robust central tendency) lena</td><td>Skewed distribution ya jahan extreme outliers hon (e.g. Salary, House Price)</td><td><span class="mono">SimpleImputer(strategy='median')</span></td></tr>
+        <tr><td><b>Mode (Most Frequent)</b></td><td>Highest frequency / most common value se fill karna</td><td>Categorical columns (e.g. City, Gender) ya discrete rating counts mein</td><td><span class="mono">SimpleImputer(strategy='most_frequent')</span></td></tr>
+        <tr><td><b>Arbitrary / Constant</b></td><td>Kisi fixed constant (e.g. -1, 999 ya 'Missing') se fill karna</td><td>Jab missingness khud ek signal ho (Missing Not At Random - MNAR)</td><td><span class="mono">SimpleImputer(strategy='constant', fill_value=...)</span></td></tr>
+        <tr><td><b>KNN Imputer (Multivariate)</b></td><td>Euclidean distance se nearest k-neighbors ka weighted average lena</td><td>Jab columns aapas mein correlated hon aur patterns preserve karne hon</td><td><span class="mono">KNNImputer(n_neighbors=5)</span></td></tr>
+        <tr><td><b>Iterative / MICE</b></td><td>Multiple Imputation by Chained Equations (har feature ko regression se predict karna)</td><td>Complex tabular datasets mein jahan statistical precision sabse critical ho</td><td><span class="mono">IterativeImputer()</span></td></tr>
+      </table>
+
+      <div class="warn"><b>Golden Rule (Prevent Data Leakage):</b> Imputer ko hamesha sirf <span class="mono">X_train</span> par <span class="mono">.fit()</span> karo aur phir <span class="mono">X_train</span> aur <span class="mono">X_test</span> dono par <span class="mono">.transform()</span> karo. Test data ka mean ya median kabhi train model mein leak nahi hona chahiye!</div>
+
+      <div class="chk"><b>Khud check karo:</b>
+        <br>&bull; Agar salary column mein extreme outliers hon, to missing salary ke liye mean imputation karoge ya median? Kyun?
+        <br>&bull; <span class="mono">fit_transform(X_train)</span> aur <span class="mono">transform(X_test)</span> ka rule statistical imputation mein kyun zaroori hai?
+      </div>
     </div></details></li>
 
   <!-- 6. Scikit-Learn Algorithms -->
   <li class="stop p2" data-id="ml-algo"><button class="dot" aria-pressed="false" aria-label="Mark Scikit-Learn Algorithms done"></button>
-    <details><summary><h3>6. Scikit-Learn &amp; Core Algorithms (Linear, Decision Tree, Random Forest)</h3><span class="meta">Time: 4 se 5 din &nbsp;|&nbsp; Depth: implementation &amp; evaluation</span></summary>
+    <details><summary><h3>6. Scikit-Learn &amp; Core ML Algorithms (Linear, Logistic, Decision Tree, Random Forest)</h3><span class="meta">Time: 4 se 5 din &nbsp;|&nbsp; Depth: implementation, intuition &amp; evaluation</span></summary>
     <div class="body">
-      <p><span class="k">Samjho:</span> Scikit-Learn (<span class="mono">sklearn</span>) Python ki primary machine learning library hai. Tumhe 3 core algorithms achhi tarah use karne aane chahiye:</p>
+      <p><span class="k">Samjho:</span> Scikit-Learn (<span class="mono">sklearn</span>) Python ki primary machine learning library hai. Industry tabular problems mein in 4 foundational algorithms ka sabse zyada use hota hai:</p>
       <table>
-        <tr><th>Algorithm</th><th>Kaam</th><th>Use Case</th></tr>
-        <tr><td><b>Linear Regression</b></td><td>Continuous number predict karna</td><td>Ghar ki price, salary prediction</td></tr>
-        <tr><td><b>Decision Tree</b></td><td>If-else rules ka tree banana</td><td>Customer churn, loan approval</td></tr>
-        <tr><td><b>Random Forest</b></td><td>Multiple trees ka ensemble (voting)</td><td>High accuracy classification &amp; regression</td></tr>
+        <tr><th>Algorithm</th><th>Type</th><th>Core Math / Intuition</th><th>Practical Use Case</th><th>Scikit-Learn Class</th></tr>
+        <tr><td><b>Linear Regression</b></td><td>Regression</td><td>Continuous linear trend line ($y = mx + c$). Residual Sum of Squares (RSS) ko minimize karta hai (OLS).</td><td>Ghar ki price, salary prediction, sales demand forecasting</td><td><span class="mono">LinearRegression()</span></td></tr>
+        <tr><td><b>Logistic Regression</b></td><td>Classification</td><td>Sigmoid function $\sigma(z) = \frac{1}{1 + e^{-z}}$ se probability ($0$ se $1$) output karta hai. Log-Loss minimize karta hai.</td><td>Email spam filter (Spam/Not), Loan default approval, Customer churn</td><td><span class="mono">LogisticRegression()</span></td></tr>
+        <tr><td><b>Decision Tree</b></td><td>Classification &amp; Regression</td><td>Hierarchical if-else decisions ka tree. Splits Gini Impurity ya Entropy (Information Gain) minimize karke banata hai.</td><td>Medical diagnosis, credit risk evaluation, customer segmentation</td><td><span class="mono">DecisionTreeClassifier()</span><br><span class="mono">DecisionTreeRegressor()</span></td></tr>
+        <tr><td><b>Random Forest</b></td><td>Ensemble (Bagging)</td><td>100+ Decision Trees ka ensemble (Bootstrap Aggregation). Majority voting ya average prediction deta hai. Overfitting drastically kam karta hai.</td><td>Credit card fraud detection, stock market prediction, high accuracy tabular models</td><td><span class="mono">RandomForestClassifier()</span><br><span class="mono">RandomForestRegressor()</span></td></tr>
       </table>
-      <p><span class="k">Core Workflow:</span> <span class="mono">train_test_split</span> &rarr; <span class="mono">model.fit(X_train, y_train)</span> &rarr; <span class="mono">model.predict(X_test)</span> &rarr; Metrics (MAE, R2, Accuracy, Confusion Matrix).</p>
-      <div class="chk"><b>Khud check karo:</b> Ek dataset par Linear Regression aur Random Forest train karke dono ke evaluation metrics compare kar sakte ho?</div>
+
+      <p style="margin-top:14px;"><span class="k">Core Workflow Pattern:</span></p>
+      <p><span class="mono">train_test_split(X, y)</span> &rarr; <span class="mono">model = RandomForestClassifier(n_estimators=100)</span> &rarr; <span class="mono">model.fit(X_train, y_train)</span> &rarr; <span class="mono">y_pred = model.predict(X_test)</span>.</p>
+
+      <p style="margin-top:12px;"><b>Model Evaluation Metrics:</b></p>
+      <table>
+        <tr><th>Problem Category</th><th>Key Metrics</th><th>Samjho</th></tr>
+        <tr><td><b>Regression</b></td><td><b>MAE, MSE, RMSE, R&sup2; Score</b></td><td>Prediction actual numerical value se kitni pass ya door hai.</td></tr>
+        <tr><td><b>Classification</b></td><td><b>Confusion Matrix, Accuracy, Precision, Recall, F1-Score, ROC-AUC</b></td><td>Imbalanced data (jaise 99% non-fraud, 1% fraud) mein sirf accuracy misleading hoti hai; Precision aur Recall se exact quality judge hoti hai.</td></tr>
+      </table>
+
+      <div class="chk"><b>Khud check karo:</b>
+        <br>&bull; Linear Regression continuous target ke liye aur Logistic Regression probability/classification ke liye kyun use hota hai?
+        <br>&bull; Decision Tree overfit jaldi kyun hota hai aur Random Forest use kaise solve karta hai?
+        <br>&bull; Ek dataset par <span class="mono">LogisticRegression</span> aur <span class="mono">RandomForestClassifier</span> dono train karke Classification Report aur Confusion Matrix compare kar sakte ho?
+      </div>
     </div></details></li>
 
   <!-- ════ PHASE 3: CONTAINERIZATION, CLOUD & DEPLOYMENT ════ -->
@@ -420,30 +379,57 @@ button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:
 
   <!-- 8. Cloud Basics: AWS & Azure -->
   <li class="stop p3" data-id="cloud"><button class="dot" aria-pressed="false" aria-label="Mark Cloud Basics done"></button>
-    <details><summary><h3>8. Cloud Basics (AWS &amp; Azure)</h3><span class="meta">Time: 2 se 3 din &nbsp;|&nbsp; Depth: core services &amp; architecture</span></summary>
+    <details><summary><h3>8. Cloud Basics &amp; Azure Fundamentals for AI</h3><span class="meta">Time: 2 se 3 din &nbsp;|&nbsp; Depth: core services &amp; cloud mental model</span></summary>
     <div class="body">
-      <p><span class="k">Samjho:</span> Modern AI applications cloud par deploy aur scale hoti hain. Dono primary cloud providers ke core building blocks samjho:</p>
+      <p><span class="k">Samjho:</span> Modern production AI models laptop par nahi balki cloud infrastructure par train aur serve hote hain. AWS aur Azure dono ke foundational services ka mental model samjho:</p>
       <table>
         <tr><th>Capability</th><th>AWS (Amazon Web Services)</th><th>Azure (Microsoft)</th></tr>
-        <tr><td>Object / File Storage</td><td><b>AWS S3</b> (datasets &amp; model weights)</td><td><b>Azure Blob Storage</b></td></tr>
-        <tr><td>Virtual Servers / Compute</td><td><b>AWS EC2</b> (virtual instances)</td><td><b>Azure Virtual Machines</b></td></tr>
-        <tr><td>Serverless Execution</td><td><b>AWS Lambda</b></td><td><b>Azure Functions</b></td></tr>
-        <tr><td>Managed AI Services</td><td><b>Amazon Bedrock / SageMaker</b></td><td><b>Azure OpenAI Service</b></td></tr>
+        <tr><td>Resource Grouping</td><td>AWS Resource Groups / Tags</td><td><b>Azure Resource Groups</b> (saare resources ka logical container)</td></tr>
+        <tr><td>Object / File Storage</td><td><b>AWS S3</b> (buckets)</td><td><b>Azure Blob Storage</b> (model weights, datasets, logs)</td></tr>
+        <tr><td>Compute / Virtual Machines</td><td><b>AWS EC2</b></td><td><b>Azure Virtual Machines (Azure VM)</b> (CPU/GPU instances)</td></tr>
+        <tr><td>Container Registry</td><td>AWS ECR</td><td><b>Azure Container Registry (ACR)</b> (Docker images store karna)</td></tr>
+        <tr><td>Serverless Execution</td><td>AWS Lambda</td><td><b>Azure Functions</b> (event-driven lightweight scripts)</td></tr>
+        <tr><td>Enterprise AI / Foundation Models</td><td>Amazon Bedrock / SageMaker</td><td><b>Azure OpenAI Service / Azure ML</b> (GPT-4, LLaMA, embeddings)</td></tr>
       </table>
-      <p><span class="k">Kitna padhna:</span> Console navigate karna, S3/Blob storage mein file upload/download, aur cloud architecture ka basic mental model.</p>
-      <div class="chk"><b>Khud check karo:</b> S3 bucket ya Azure Blob storage mein file upload aur access policy ka flow samjha sakte ho?</div>
+
+      <p style="margin-top:14px;"><span class="k">Azure Core Concepts for ML Engineers:</span></p>
+      <p><b>1. Azure Resource Group:</b> Ek project ke saare components (Storage, Container App, Key Vault, Database) ek hi Resource Group ke andar manage hote hain, jisse billing aur cleanup ek click mein ho jata hai.</p>
+      <p><b>2. Azure Blob Storage:</b> Machine Learning models (<span class="mono">model.pkl</span> / <span class="mono">onnx</span>) aur raw datasets ko store karne ke liye standard storage hai. Isme <span class="mono">Hot</span>, <span class="mono">Cool</span>, aur <span class="mono">Archive</span> tiers hote hain.</p>
+      <p><b>3. Azure CLI (<span class="mono">az</span>):</b> Terminal se Azure login (<span class="mono">az login</span>), resource group banana (<span class="mono">az group create</span>), aur services deploy karna seekho.</p>
+
+      <div class="chk"><b>Khud check karo:</b> Azure Blob storage mein model artifact upload karke access karne ke liye Connection String ya SAS Token kaise use hota hai?</div>
     </div></details></li>
 
   <!-- 9. AI to Deploy Architecture -->
   <li class="stop p3" data-id="deploy"><button class="dot" aria-pressed="false" aria-label="Mark AI Deployment done"></button>
-    <details><summary><h3>9. AI to Deploy Architecture</h3><span class="meta">Time: 3 se 4 din &nbsp;|&nbsp; Depth: end-to-end production flow</span></summary>
+    <details><summary><h3>9. AI to Deploy Architecture &amp; Azure Deployment Flow</h3><span class="meta">Time: 3 se 4 din &nbsp;|&nbsp; Depth: end-to-end production pipeline</span></summary>
     <div class="body">
-      <p><span class="k">Samjho:</span> Jupyter Notebook ka code production-grade API kaise banta hai? Complete deployment architecture ka flow samjho:</p>
-      <p><b>1. API Layer:</b> FastAPI ya Flask se REST endpoints create karna (<span class="mono">POST /predict</span>).</p>
-      <p><b>2. Containerization:</b> API + Model weights ko Docker image mein wrap karna.</p>
-      <p><b>3. Serving &amp; Scaling:</b> Cloud VM (EC2/Azure VM) ya Container Service par host karna, health checks, environment variables, aur CORS configure karna.</p>
-      <p><b>4. Flow:</b> Client App &rarr; API Gateway / FastAPI &rarr; Model Inference Engine &rarr; JSON Output.</p>
-      <div class="chk"><b>Khud check karo:</b> FastAPI mein trained model load karke POST request se input le kar prediction JSON return kar sakte ho?</div>
+      <p><span class="k">Samjho:</span> Jupyter Notebook ka code production-grade API aur cloud service kaise banta hai? End-to-end model deployment pipeline samjho:</p>
+
+      <p><b>Step 1: Model Serialization:</b> Trained Scikit-Learn model ko disk par save karo: <span class="mono">import joblib; joblib.dump(model, 'model.pkl')</span>.</p>
+      <p><b>Step 2: API Wrapper (FastAPI):</b> REST endpoints banao jahan client input JSON bheje aur API prediction return kare:</p>
+      <p><span class="mono">@app.post("/predict")</span> &rarr; Input Features receive &rarr; <span class="mono">model.predict([features])</span> &rarr; JSON output return.</p>
+      <p><b>Step 3: Docker Containerization:</b> Code, dependencies (<span class="mono">requirements.txt</span>), aur model file ko Docker image mein pack karo:</p>
+      <p><span class="mono">docker build -t ai-prediction-api .</span></p>
+
+      <p style="margin-top:14px;"><span class="k">Azure Deployment Options (Real-world):</span></p>
+      <table>
+        <tr><th>Azure Deployment Service</th><th>Kab Use Karein?</th><th>Production Advantage</th></tr>
+        <tr><td><b>Azure Container Apps (ACA)</b></td><td>FastAPI Docker container deploy karne ke liye (Recommended)</td><td>Serverless Kubernetes behind the scenes, automatic HTTPS domain, 0-to-N auto-scaling, low cost.</td></tr>
+        <tr><td><b>Azure App Service</b></td><td>Web apps + AI API standard hosting</td><td>Simple git push ya container deploy, easy custom domain &amp; SSL setup.</td></tr>
+        <tr><td><b>Azure Machine Learning (Azure ML) Managed Endpoints</b></td><td>Enterprise-scale ML models &amp; A/B testing</td><td>Built-in model versioning, data drift monitoring, automated health telemetry, Blue/Green rollout.</td></tr>
+        <tr><td><b>Azure Functions</b></td><td>Lightweight inference triggers (event-based)</td><td>Pay-per-execution, model chhota ho to low cost.</td></tr>
+      </table>
+
+      <p style="margin-top:12px;"><b>Azure CLI Deployment Command Flow:</b></p>
+      <p><span class="mono">az login</span> &rarr; <span class="mono">az acr create --name myacr ...</span> (Container Registry create karo)<br>
+      &rarr; <span class="mono">az acr build --registry myacr --image ai-api:v1 .</span> (Cloud par Docker image build &amp; push)<br>
+      &rarr; <span class="mono">az containerapp create --name ai-service --image myacr.azurecr.io/ai-api:v1 ...</span> (Live public HTTPS API URL mil jati hai!)</p>
+
+      <div class="chk"><b>Khud check karo:</b>
+        <br>&bull; Trained model ko Pickle/Joblib se save karke FastAPI mein load karke local machine par test kar sakte ho?
+        <br>&bull; Azure Container Apps par Docker container deploy karne ka end-to-end flow kya hai?
+      </div>
     </div></details></li>
 
   <!-- ════ PHASE 4: LLMS, TOKENIZATION & GENERATIVE AI ════ -->
@@ -536,10 +522,7 @@ button.reset{margin-top:22px;background:none;border:1px solid var(--line);color:
 
 <div class="end" style="border-color:#9333EA">
   <h2>Sab stations complete ho gaye? 🎉</h2>
-  <p style="margin:6px 0 0">Python, Data Stack, ML Algorithms, Cloud/Docker, aur GenAI/Agents poora karne ke baad tum ek high-impact AI/ML engineer ban chuke ho. Iske baad direct projects portfolio banao aur job/internship apply karo!</p>
-  <div style="margin-top:14px;">
-    <a href="internships.html" style="display:inline-flex;align-items:center;gap:6px;font-size:.9rem;font-weight:700;text-decoration:none;color:#fff;background:#0B8F80;padding:8px 18px;border-radius:8px;">💼 Browse 100+ Live Tech Internships &rarr;</a>
-  </div>
+  <p style="margin:6px 0 0">Python, Data Stack, ML Algorithms, Cloud/Docker, aur GenAI/Agents poora karne ke baad tum ek high-impact AI/ML engineer ban chuke ho. Ab portfolio projects build karo aur open source machine learning contributions shuru karo!</p>
 </div>
 <button class="reset" id="reset">Progress reset karo</button>
 </div>
